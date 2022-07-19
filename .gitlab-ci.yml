@@ -1,0 +1,8 @@
+include:
+    - project: Ackee/gitlab-ci-templates
+      ref: nextjs-cloudrun/v1.0.0
+      file: nextjs-cloudrun/pipeline.yml
+
+variables:
+    NODE_BASE_IMAGE: 'node:16-alpine'
+    DEPLOYMENT_TYPE: 'cloudrun'

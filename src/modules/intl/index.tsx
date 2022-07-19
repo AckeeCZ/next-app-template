@@ -1,0 +1,1 @@
+export { default as Intl } from './components/Intl';
