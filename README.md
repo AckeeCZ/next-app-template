@@ -27,3 +27,5 @@ To learn more about Next.js, take a look at the following resources:
 -   Guide the setup of next-auth
 -   Guide the setup of Resizin
 -   Guide the setup of SCSS
+-   Use @ackee/fela
+-   Use theme values from css vars
