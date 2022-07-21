@@ -1,32 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ackee Next.js app template
 
-## Getting Started
+This is a project template for [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## How to use
 
 First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
+```sh
+$ yarn create next-app --example=https://github.com/AckeeCZ/next-app-template
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```sh
+npx create-next-app --example=https://github.com/AckeeCZ/next-app-template
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-next-app)
 
 ## TODO
 
--   Setup Sentry
--   Guide the setup of next-auth
--   Guide the setup of Resizin
--   Guide the setup of SCSS
--   Use @ackee/fela
--   Use theme values from css vars
--   Add generatePath util for Next
+- Setup Sentry
+- Guide the setup of next-auth
+- Guide the setup of Resizin
+- Guide the setup of SCSS
+- Use @ackee/fela
+- Use theme values from css vars
+- Add generatePath util for Next
