@@ -22,4 +22,3 @@ Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-nex
 - Guide the setup of SCSS
 - Use @ackee/fela
 - Use theme values from css vars
-- Add generatePath util for Next
