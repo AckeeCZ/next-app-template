@@ -8,12 +8,8 @@ First, run the development server:
 
 ```sh
 $ yarn create next-app --example=https://github.com/AckeeCZ/next-app-template
-```
-
-or
-
-```sh
-npx create-next-app --example=https://github.com/AckeeCZ/next-app-template
+# or
+$ npx create-next-app --example=https://github.com/AckeeCZ/next-app-template
 ```
 
 Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-next-app)
