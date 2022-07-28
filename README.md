@@ -16,9 +16,7 @@ Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-nex
 
 ## TODO
 
-- Setup Sentry
 - Guide the setup of next-auth
-- Guide the setup of Resizin
 - Guide the setup of SCSS
 - Use @ackee/fela
 - Use theme values from css vars

@@ -83,7 +83,7 @@ const felaRules = {
 
     grid: {
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         flexWrap: 'wrap',
         maxWidth: '800px',
@@ -173,23 +173,30 @@ const Home: NextPage = () => {
                         <h2>Learn &rarr;</h2>
                         <p>Learn about Next.js in an interactive course with quizzes!</p>
                     </a>
-                </div>
 
-                <div className={styles.card}>
-                    <a href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/sentry.md">
-                        <h2>How to use Sentry &rarr;</h2>
-                        <p>Find out how to configure Sentry in the app and test the setup with button below.</p>
-                    </a>
+                    <div className={styles.card}>
+                        <a href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/sentry.md">
+                            <h2>How to use Sentry &rarr;</h2>
+                            <p>Find out how to configure Sentry in the app and test the setup with button below.</p>
+                        </a>
 
-                    <button
-                        type="button"
-                        onClick={() => {
-                            throw new Error('Sentry Frontend Error');
-                        }}
-                        className={styles.button}
-                    >
-                        Throw error
-                    </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                throw new Error('Sentry Frontend Error');
+                            }}
+                            className={styles.button}
+                        >
+                            Throw error
+                        </button>
+                    </div>
+
+                    <div className={styles.card}>
+                        <a href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/resizin.md">
+                            <h2>How to use Resizin &rarr;</h2>
+                            <p>If you need to use Resizin, read the setup guide.</p>
+                        </a>
+                    </div>
                 </div>
             </main>
 
