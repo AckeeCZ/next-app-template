@@ -191,12 +191,21 @@ const Home: NextPage = () => {
                         </button>
                     </div>
 
-                    <div className={styles.card}>
-                        <a href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/resizin.md">
-                            <h2>How to use Resizin &rarr;</h2>
-                            <p>If you need to use Resizin, read the setup guide.</p>
-                        </a>
-                    </div>
+                    <a
+                        href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/resizin.md"
+                        className={styles.card}
+                    >
+                        <h2>How to use Resizin &rarr;</h2>
+                        <p>If you need to use Resizin, read the setup guide.</p>
+                    </a>
+
+                    <a
+                        href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/sass.md"
+                        className={styles.card}
+                    >
+                        <h2>Need to you Sass &rarr;</h2>
+                        <p>Read the simple guide of how to add &amp; use it.</p>
+                    </a>
                 </div>
             </main>
 
