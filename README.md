@@ -16,6 +16,5 @@ Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-nex
 
 ## TODO
 
-- Guide the setup of next-auth
 - Use @ackee/fela
 - Use theme values from css vars

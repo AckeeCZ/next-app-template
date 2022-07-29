@@ -18,6 +18,14 @@ const buttonHoverStyle = {
     borderColor: '#000',
 };
 
+const codeBaseStyle = {
+    background: '#fafafa',
+    borderRadius: '5px',
+    fontSize: '1.1rem',
+    fontFamily:
+        'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+};
+
 const felaRules = {
     container: {
         padding: '0 2rem',
@@ -73,12 +81,13 @@ const felaRules = {
     },
 
     code: {
-        background: '#fafafa',
-        borderRadius: '5px',
+        ...codeBaseStyle,
         padding: '0.75rem',
-        fontSize: '1.1rem',
-        fontFamily:
-            'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+    },
+
+    inlineCode: {
+        ...codeBaseStyle,
+        padding: '0.45rem',
     },
 
     grid: {
@@ -196,7 +205,10 @@ const Home: NextPage = () => {
                         className={styles.card}
                     >
                         <h2>How to use Resizin &rarr;</h2>
-                        <p>If you need to use Resizin, read the setup guide.</p>
+                        <p>
+                            If you need to use Ackee image server Resizin, read how to setup &amp; and use it along with{' '}
+                            <code className={styles.inlineCode}>next-image</code>.
+                        </p>
                     </a>
 
                     <a
@@ -205,6 +217,16 @@ const Home: NextPage = () => {
                     >
                         <h2>Need to you Sass &rarr;</h2>
                         <p>Read the simple guide of how to add &amp; use it.</p>
+                    </a>
+
+                    <a
+                        href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/next-auth.md"
+                        className={styles.card}
+                    >
+                        <h2>Tips on Auth &rarr;</h2>
+                        <p>
+                            Some advices for using <code className={styles.inlineCode}>next-auth</code> package
+                        </p>
                     </a>
                 </div>
             </main>
