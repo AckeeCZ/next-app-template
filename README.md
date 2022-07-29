@@ -14,6 +14,13 @@ $ npx create-next-app --example=https://github.com/AckeeCZ/next-app-template
 
 Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-next-app)
 
+## Guides
+
+- [How to use Sentry](./docs/sentry.md)
+- [Images with Resizin and `next-image`](./docs/resizin.md)
+- [Using Sass](./docs/sass.md)
+- [Authentication with Firebase and `next-auth`](./docs/next-auth.md)
+
 ## TODO
 
 - Use @ackee/fela
