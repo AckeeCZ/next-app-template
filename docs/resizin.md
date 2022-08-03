@@ -5,7 +5,7 @@ This is a guide of how to use Ackee image server Resizin in the Next.js app.
 ## ➕ Install `react-resizin` package
 
 ```sh
-$ npx i react-resizin
+$ npm i react-resizin
 # or
 $ yarn add react-resizin
 ```
