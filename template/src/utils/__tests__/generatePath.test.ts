@@ -14,6 +14,6 @@ describe('generatePath', () => {
     });
 
     it('throws an error when params are not provided', () => {
-        expect(() => generatePath('/page/[id]/', {})).toThrow('Key id was not provided');
+        expect(() => generatePath('/page/[id]/', {} as any)).toThrow('Key id was not provided');
     });
 });

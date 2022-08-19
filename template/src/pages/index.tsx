@@ -13,6 +13,19 @@ const cardHoverStyle = {
     borderColor: '#0070f3',
 };
 
+const buttonHoverStyle = {
+    color: '#000',
+    borderColor: '#000',
+};
+
+const codeBaseStyle = {
+    background: '#fafafa',
+    borderRadius: '5px',
+    fontSize: '1.1rem',
+    fontFamily:
+        'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+};
+
 const felaRules = {
     container: {
         padding: '0 2rem',
@@ -68,17 +81,18 @@ const felaRules = {
     },
 
     code: {
-        background: '#fafafa',
-        borderRadius: '5px',
+        ...codeBaseStyle,
         padding: '0.75rem',
-        fontSize: '1.1rem',
-        fontFamily:
-            'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+    },
+
+    inlineCode: {
+        ...codeBaseStyle,
+        padding: '0.45rem',
     },
 
     grid: {
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
         flexWrap: 'wrap',
         maxWidth: '800px',
@@ -120,6 +134,22 @@ const felaRules = {
         height: '1em',
         marginLeft: '0.5rem',
     },
+
+    button: {
+        display: 'block',
+        margin: '0.5rem auto',
+        padding: '0.8rem',
+        color: 'inherit',
+        textDecoration: 'none',
+        border: '1px solid #eaeaea',
+        borderRadius: '10px',
+        transition: 'color 0.15s ease, border-color 0.15s ease',
+        cursor: 'pointer',
+
+        '&:hover': buttonHoverStyle,
+        '&:focus': buttonHoverStyle,
+        '&:active': buttonHoverStyle,
+    },
 };
 
 const Home: NextPage = () => {
@@ -151,6 +181,52 @@ const Home: NextPage = () => {
                     <a href="https://nextjs.org/learn" className={styles.card}>
                         <h2>Learn &rarr;</h2>
                         <p>Learn about Next.js in an interactive course with quizzes!</p>
+                    </a>
+
+                    <div className={styles.card}>
+                        <a href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/sentry.md">
+                            <h2>How to use Sentry &rarr;</h2>
+                            <p>Find out how to configure Sentry in the app and test the setup with button below.</p>
+                        </a>
+
+                        <button
+                            type="button"
+                            onClick={() => {
+                                throw new Error('Sentry Frontend Error');
+                            }}
+                            className={styles.button}
+                        >
+                            Throw error
+                        </button>
+                    </div>
+
+                    <a
+                        href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/resizin.md"
+                        className={styles.card}
+                    >
+                        <h2>How to use Resizin &rarr;</h2>
+                        <p>
+                            If you need to use Ackee image server Resizin, read how to setup &amp; and use it along with{' '}
+                            <code className={styles.inlineCode}>next-image</code>.
+                        </p>
+                    </a>
+
+                    <a
+                        href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/sass.md"
+                        className={styles.card}
+                    >
+                        <h2>Need to you Sass &rarr;</h2>
+                        <p>Read the simple guide of how to add &amp; use it.</p>
+                    </a>
+
+                    <a
+                        href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/next-auth.md"
+                        className={styles.card}
+                    >
+                        <h2>Tips on Auth &rarr;</h2>
+                        <p>
+                            Some advices for using <code className={styles.inlineCode}>next-auth</code> package
+                        </p>
                     </a>
                 </div>
             </main>
