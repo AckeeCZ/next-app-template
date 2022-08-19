@@ -1,6 +1,6 @@
 include:
     - project: Ackee/gitlab-ci-templates
-      ref: nextjs-cloudrun/v1.0.0
+      ref: nextjs-cloudrun/v1.0.1
       file: nextjs-cloudrun/pipeline.yml
 
 variables:
