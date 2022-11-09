@@ -14,6 +14,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
+## Configuration
+
+-   Build Next.js variables (exposed on client) are prefixed with `NEXT_PUBLIC_` and should be placed to `ci-branch-config` for deployment.
+-   Runtime variables (used on the server) are all other. Set them in GCP Secrets Manger for deployment.
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
