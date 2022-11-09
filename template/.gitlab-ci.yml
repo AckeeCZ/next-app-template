@@ -4,5 +4,5 @@ include:
       file: nextjs-cloudrun/pipeline.yml
 
 variables:
-    NODE_BASE_IMAGE: 'node:16-alpine'
+    NODE_BASE_IMAGE: 'node:16.18.0'
     DEPLOYMENT_TYPE: 'cloudrun'
