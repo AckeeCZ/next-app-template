@@ -26,6 +26,7 @@ RUN useradd nextjs -u 1001 --gid 1001
 # COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/.env.jsonc ./.env.jsonc
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
@@ -44,5 +45,6 @@ ENV PORT 3000
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry.
 # ENV NEXT_TELEMETRY_DISABLED 1
+ENV CFG_JSON_PATH="/config/secrets.json"
 
 CMD ["node", "server.js"]

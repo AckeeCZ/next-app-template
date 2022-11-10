@@ -14,11 +14,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-## Configuration
+## Build env variables
 
--   Build Next.js variables (exposed on client) are prefixed with `NEXT_PUBLIC_` and should be placed to `ci-branch-config` for deployment.
--   Runtime variables (used on the server) are all other. Set them in GCP Secrets Manger for deployment.
+Build Next.js variables (exposed on client) are prefixed with `NEXT_PUBLIC_` and should be placed to `ci-branch-config` for deployment. Put them in `.env.local` file for local development.
 
+## Runtime env variables
+
+Runtime variables (used on the server) are all other. Set them in GCP Secrets Manger for deployment. Then load them with [Configuru](https://github.com/AckeeCZ/configuru) package on the server.
+
+The package loads the configuration from JSON/JSONC file. For local development, set `CFG_JSON_PATH` to the path of this file, e.g. `CFG_JSON_PATH=.env.local.jsonc`. You can find a template of with all runtime variables in the `.env.jsonc` file. Keep it updated.
 
 ## Learn More
 
