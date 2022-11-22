@@ -22,7 +22,7 @@ Build Next.js variables (exposed on client) are prefixed with `NEXT_PUBLIC_` and
 
 Runtime variables (used on the server) are all other. Set them in GCP Secrets Manger for deployment. Then load them with [Configuru](https://github.com/AckeeCZ/configuru) package on the server.
 
-The package loads the configuration from JSON/JSONC file. For local development, set `CFG_JSON_PATH` to the path of this file, e.g. `CFG_JSON_PATH=.env.local.jsonc`. You can find a template of with all runtime variables in the `.env.jsonc` file. Keep it updated.
+The package loads the configuration from JSON/JSONC file. For local development, set `CFG_JSON_PATH` to the path of this file, e.g. `CFG_JSON_PATH=.env.local.jsonc`. You can find a template with all runtime variables in the `.env.jsonc` file (it serves as a default value and documentation). Keep it updated. You then map your variables to `serverConfig` object in [src/config/serverConfig.ts](src/config/serverConfig.ts).
 
 ## Learn More
 
