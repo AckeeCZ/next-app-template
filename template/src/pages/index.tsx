@@ -131,7 +131,6 @@ const felaRules = {
     },
 
     logo: {
-        height: '1em',
         marginLeft: '0.5rem',
     },
 
@@ -238,9 +237,7 @@ const Home: NextPage = () => {
                     rel="noopener noreferrer"
                 >
                     With love by{' '}
-                    <span className={styles.logo}>
-                        <Image src="/ackee.svg" alt="Ackee Logo" width={72} height={16} />
-                    </span>
+                    <Image className={styles.logo} width={72} height={16} src="/ackee.svg" alt="Ackee Logo" />
                 </a>
             </footer>
         </div>

@@ -10,7 +10,7 @@ class MyDocument extends Document {
         ctx.renderPage = () =>
             originalRenderPage({
                 // TODO - solve the ESLint and Typescript issue
-                // @ts-ignore
+                // @ts-expect-error
                 // eslint-disable-next-line react/display-name
                 enhanceApp: App => props => <App {...props} renderer={renderer} />,
             });
