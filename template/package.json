@@ -41,6 +41,7 @@
         "reset.css": "^2.0.2"
     },
     "devDependencies": {
+        "@ackee/browserslist-config": "^3.0.0",
         "@ackee/eslint-config": "^4.1.0",
         "@lokse/plugin-prettier": "^2.2.0",
         "@storybook/addon-actions": "^6.5.15",
@@ -86,7 +87,6 @@
     },
     "optionalDependencies": {
         "@babel/core": "^7.20.12",
-        "babel-loader": "^8.3.0",
         "@storybook/addon-actions": "^6.5.15",
         "@storybook/addon-essentials": "^6.5.15",
         "@storybook/addon-interactions": "^6.5.15",
@@ -95,7 +95,11 @@
         "@storybook/manager-webpack5": "^6.5.15",
         "@storybook/react": "^6.5.15",
         "@storybook/testing-library": "^0.0.13",
+        "babel-loader": "^8.3.0",
         "storybook-addon-next": "^1.7.1",
         "tsconfig-paths-webpack-plugin": "^4.0.0"
-    }
+    },
+    "browserslist": [
+        "extends @ackee/browserslist-config"
+    ]
 }
