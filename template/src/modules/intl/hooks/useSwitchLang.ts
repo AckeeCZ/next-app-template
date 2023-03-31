@@ -1,16 +1,18 @@
-import { useMemo } from 'react';
 import { useRouter } from 'next/router';
+import { useMemo } from 'react';
 import type { MessageFormatElement } from 'react-intl';
 
-import { cs } from 'translations';
 import type { MessageKey } from 'translations';
+import { cs } from 'translations';
 
 import { Languages } from '../config';
+import type { Locale as LocaleType } from '../types';
+import { Locale } from '../types';
 
-const useSwitchLang = (): [string, Record<MessageKey, string> | Record<MessageKey, MessageFormatElement[]>] => {
+const useSwitchLang = (): [LocaleType, Record<MessageKey, string> | Record<MessageKey, MessageFormatElement[]>] => {
     const { locale } = useRouter();
 
-    const shortLocale = locale || Languages.CS;
+    const shortLocale: LocaleType = (locale as LocaleType) || Locale.CS;
 
     const messages = useMemo(() => {
         switch (shortLocale) {

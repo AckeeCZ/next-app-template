@@ -6,6 +6,10 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
 
+    images: {
+        domains: ['localhost', 'storage.googleapis.com'],
+    },
+
     // https://dev.to/chromygabor/add-typescript-type-check-to-next-js-2nbb
     webpack(config, options) {
         // Do not run type checking twice:
