@@ -1,9 +1,7 @@
 module.exports = {
     replaceAttrValues: {
-        '#828282': 'currentColor',
+        // Note: Add another here if needed
         '#000': 'currentColor',
-        '#FFD618': 'currentColor',
-        '#FFD824': 'currentColor',
     },
 
     outDir: 'src/modules/ui/components/Icons/Icons',

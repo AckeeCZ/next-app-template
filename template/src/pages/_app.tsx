@@ -1,8 +1,6 @@
 import type { AppProps } from 'next/app';
 import type { ReactNode } from 'react';
 
-import { Analytics } from '@vercel/analytics/react';
-
 import { Intl } from 'modules/intl';
 import 'normalize.css';
 import 'reset.css';
@@ -17,10 +15,9 @@ function App({ Component, pageProps }: ExtendedAppProps) {
 
     return (
         <>
-                <Intl>
-                    <Component {...pageProps} />
-                    <Analytics />
-                </Intl>
+            <Intl>
+                <Component {...pageProps} />
+            </Intl>
         </>
     );
 }

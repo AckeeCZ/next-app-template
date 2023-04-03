@@ -1,6 +1,6 @@
 import type { ComponentMeta } from '@storybook/react';
 
-import { Heading } from 'modules/ui';
+import { Heading } from './Heading.styles';
 
 export default {
     title: 'UI/Heading',
@@ -13,8 +13,6 @@ export default {
 export const Primary = () => (
     <>
         <Heading level={1}>Heading level 1</Heading>
-        <Heading level={2} as="h2">
-            Heading level 2
-        </Heading>
+        <Heading level={2}>Heading level 2</Heading>
     </>
 );

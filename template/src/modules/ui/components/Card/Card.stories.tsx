@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Card } from 'modules/ui';
+import { Card } from './Card';
 
 export default {
     title: 'UI/Card',

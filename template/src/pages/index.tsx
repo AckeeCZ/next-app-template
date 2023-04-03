@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { css } from 'styles/theme';
 
 import { Heading } from 'modules/ui';
+import { css } from 'styles/theme';
 
 const cardHoverStyle = {
     color: '#0070f3',
