@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { config } from 'config';
-import { QueryKeyName, getQueryData, useAppQuery } from 'modules/api';
+import { QueryKeyName, getQueryData, useAppMutation, useAppQuery } from 'modules/api';
 import { Heading } from 'modules/ui';
 import { css } from 'styles/theme';
 
@@ -147,6 +147,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 const Home: NextPage = () => {
     // Note: How to fetch data on client side
     const { data, isError, isLoading, isSuccess } = useAppQuery([QueryKeyName.TEST_DATA], config.endpoints.testData);
+    const { mutate } = useAppMutation(config.endpoints.testData);
 
     // eslint-disable-next-line no-console
     console.log(data, isError, isLoading, isSuccess);
@@ -204,9 +205,17 @@ const Home: NextPage = () => {
                         </p>
                     </a>
 
-                    <a href="https://github.com/AckeeCZ/next-app-template/tree/main/docs/sass.md" className={card()}>
-                        <h2>Need to you Sass &rarr;</h2>
-                        <p>Read the simple guide of how to add &amp; use it.</p>
+                    <a href="https://tanstack.com/query/latest" className={card()}>
+                        <h2>Tanstack query usage</h2>
+                        <p>Test adding new recipe with useMutation hook</p>
+
+                        <button
+                            type="button"
+                            onClick={async () => await mutate({ name: 'New recipe' })}
+                            className={button()}
+                        >
+                            Add new recipe
+                        </button>
                     </a>
 
                     <a

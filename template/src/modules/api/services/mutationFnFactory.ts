@@ -1,13 +1,13 @@
 import type { AxiosRequestConfig } from 'axios';
 
-import { localAxiosInstance } from '../config';
+import { axiosInstance } from '../config';
 
-export const mutationFnFactory = async <TPayload, TAxiosResponse>(
+export const getMutationData = async <TPayload, TAxiosResponse>(
     endpoint: string,
     payload: TPayload,
     options?: AxiosRequestConfig,
 ) => {
-    const response = await localAxiosInstance.post<TAxiosResponse>(endpoint, payload, options);
+    const response = await axiosInstance.post<TAxiosResponse>(endpoint, payload, options);
 
     return response.data;
 };

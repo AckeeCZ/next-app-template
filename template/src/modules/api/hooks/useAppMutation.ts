@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import type { AxiosRequestConfig } from 'axios';
 
-import { mutationFnFactory } from '../services';
+import { getMutationData } from '../services';
 
 export type AppMutationOptions<TOptions = unknown> = AxiosRequestConfig<TOptions>;
 
@@ -10,5 +10,6 @@ export const useAppMutation = <TPayload, TAxiosResponse, TOptions = unknown>(
     options?: AppMutationOptions<TOptions>,
 ) =>
     useMutation({
-        mutationFn: (payload: TPayload) => mutationFnFactory<TPayload, TAxiosResponse>(queryEndpoint, payload, options),
+        mutationFn: async (payload: TPayload) =>
+            await getMutationData<TPayload, TAxiosResponse>(queryEndpoint, payload, options),
     });
