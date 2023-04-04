@@ -20,6 +20,7 @@ export const useAppQuery = <TQueryFnData = unknown, TQueryKey extends QueryKey =
 
     return useQuery({
         queryKey,
+        // @ts-expect-error
         queryFn: async () => await getQueryData<TQueryFnData>(queryEndpoint, axiosOptions),
         enabled,
         refetchOnWindowFocus,

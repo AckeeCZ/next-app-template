@@ -1,9 +1,8 @@
-import type { AxiosRequestConfig } from 'axios';
+import { config } from 'config';
 
-import { axiosInstance } from '../config';
+export const getQueryData = async (endpoint: string, options?: any) => {
+    const response = await fetch(config.api.url + endpoint, options);
+    const jsonData = await response.json();
 
-export const getQueryData = async <TAxiosResponse>(endpoint: string, options?: AxiosRequestConfig) => {
-    const response = await axiosInstance.get<TAxiosResponse>(endpoint, options);
-
-    return response.data;
+    return jsonData;
 };

@@ -1,13 +1,16 @@
-import type { AxiosRequestConfig } from 'axios';
+import { config } from 'config';
 
-import { axiosInstance } from '../config';
+export const getMutationData = async <TPayload>(endpoint: string, payload: TPayload, options?: any) => {
+    const response = await fetch(config.api.url + endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+        ...options,
+    });
 
-export const getMutationData = async <TPayload, TAxiosResponse>(
-    endpoint: string,
-    payload: TPayload,
-    options?: AxiosRequestConfig,
-) => {
-    const response = await axiosInstance.post<TAxiosResponse>(endpoint, payload, options);
+    const jsonData = await response.json();
 
-    return response.data;
+    return jsonData;
 };
