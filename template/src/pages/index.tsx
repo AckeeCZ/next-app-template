@@ -1,9 +1,10 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
+import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { config } from 'config';
-import { QueryKeyName, useAppMutation, useAppQuery } from 'modules/api';
+import { QueryKeyName, getQueryData, useAppMutation, useAppQuery } from 'modules/api';
 import { Heading } from 'modules/ui';
 import { css } from 'styles/theme';
 
@@ -128,20 +129,20 @@ export const button = css({
     '&:active': buttonHoverStyle,
 });
 
-// export const getServerSideProps: GetServerSideProps = async context => {
-//     const queryClient = new QueryClient();
+export const getServerSideProps: GetServerSideProps = async context => {
+    const queryClient = new QueryClient();
 
-//     const testDataQueryFn = async () => getQueryData(config.endpoints.testData);
+    const testDataQueryFn = async () => getQueryData(config.endpoints.testData);
 
-//     // Note: How to fetch data on server side
-//     await queryClient.prefetchQuery([QueryKeyName.TEST_DATA], testDataQueryFn);
+    // Note: How to fetch data on server side
+    await queryClient.prefetchQuery([QueryKeyName.TEST_DATA], testDataQueryFn);
 
-//     return {
-//         props: {
-//             dehydratedState: dehydrate(queryClient),
-//         },
-//     };
-// };
+    return {
+        props: {
+            dehydratedState: dehydrate(queryClient),
+        },
+    };
+};
 
 const Home: NextPage = () => {
     // Note: How to fetch data on client side
