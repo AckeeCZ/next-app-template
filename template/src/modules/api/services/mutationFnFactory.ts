@@ -1,6 +1,6 @@
 import { config } from 'config';
 
-export const getMutationData = async <TPayload>(endpoint: string, payload: TPayload, options?: any) => {
+export const getMutationData = async <TPayload, TOptions>(endpoint: string, payload: TPayload, options?: TOptions) => {
     const response = await fetch(config.api.url + endpoint, {
         method: 'POST',
         headers: {

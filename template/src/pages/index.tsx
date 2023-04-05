@@ -146,11 +146,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
 const Home: NextPage = () => {
     // Note: How to fetch data on client side
-    const { data, isError, isLoading, isSuccess } = useAppQuery(
-        [QueryKeyName.TEST_DATA],
-        config.endpoints.testData,
-        {},
-    );
+    const { data, isError, isLoading, isSuccess } = useAppQuery([QueryKeyName.TEST_DATA], config.endpoints.testData);
 
     const { mutate } = useAppMutation(config.endpoints.testData, {
         // Note: optional options
@@ -220,6 +216,7 @@ const Home: NextPage = () => {
                             type="button"
                             onClick={async e => {
                                 e.preventDefault();
+                                // Note: Create special custom hook for mutations
                                 await mutate({ name: 'New recipe' });
                             }}
                             className={button()}

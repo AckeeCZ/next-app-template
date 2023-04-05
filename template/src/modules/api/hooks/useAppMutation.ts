@@ -1,13 +1,9 @@
 import { useMutation } from '@tanstack/react-query';
-import type { AxiosRequestConfig } from 'axios';
 
 import { getMutationData } from '../services';
 
-export type AppMutationOptions<TOptions = unknown> = AxiosRequestConfig<TOptions>;
-
-export const useAppMutation = <TPayload, TAxiosResponse>(queryEndpoint: string, options?: any) =>
+export const useAppMutation = <TPayload, TOptions>(queryEndpoint: string, options?: TOptions) =>
     useMutation({
         mutationFn: async (payload: TPayload) =>
-            // @ts-expect-error
-            await getMutationData<TPayload, TAxiosResponse>(queryEndpoint, payload, options),
+            await getMutationData<TPayload, TOptions>(queryEndpoint, payload, options),
     });
