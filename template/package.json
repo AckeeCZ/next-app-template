@@ -21,7 +21,7 @@
         "ci-circular-modules": "yarn check-circular-modules",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "generate-icons": "svgr src/modules/ui/components/Icons/Icons/assets",
+        "generate-icons": "npx @svgr/cli src/modules/ui/components/Icons/Icons/assets",
         "snapshot-storybook": "npx chromatic --project-token=<passwd_token>"
     },
     "dependencies": {
@@ -39,7 +39,6 @@
         "@ackee/browserslist-config": "^3.0.0",
         "@ackee/eslint-config": "^4.1.0",
         "@lokse/plugin-prettier": "^2.2.0",
-        "@svgr/cli": "^6.5.1",
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.3.0",
         "@types/lodash": "^4.14.182",
