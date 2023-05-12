@@ -11,6 +11,9 @@ const defaultConfig = {
     routes: {
         home: '/',
     },
+    endpoints: {
+        testData: '/recipes',
+    },
 } as const;
 
 type DefaultConfig = typeof defaultConfig;
