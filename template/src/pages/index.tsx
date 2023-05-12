@@ -152,6 +152,7 @@ const Home: NextPage = () => {
         // Note: optional options
     });
 
+    // TODO: Remove logs when ready
     // eslint-disable-next-line no-console
     console.log(data, isError, isLoading, isSuccess);
 
