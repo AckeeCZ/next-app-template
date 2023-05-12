@@ -1,8 +1,36 @@
-include:
-    - project: Ackee/gitlab-ci-templates
-      ref: nextjs-cloudrun/v1.0.1
-      file: nextjs-cloudrun/pipeline.yml
+default:
+  image: node:16.16.0
 
 variables:
-    NODE_BASE_IMAGE: 'node:16.19'
-    DEPLOYMENT_TYPE: 'cloudrun'
+  ACKEE_VERCEL_API_TOKEN: ""
+  CLIENT_VERCEL_API_TOKEN: ""
+
+deploy_development_ackee:
+  stage: deploy
+  only:
+    - development
+  script:
+    - npm install --global vercel
+    - vercel pull --yes --environment=preview --token=$ACKEE_VERCEL_API_TOKEN
+    - vercel build --token=$ACKEE_VERCEL_API_TOKEN
+    - vercel deploy --prebuilt --token=$ACKEE_VERCEL_API_TOKEN
+
+deploy_stage_ackee:
+  stage: deploy
+  only:
+    - stage
+  script:
+    - npm install --global vercel
+    - vercel pull --yes --environment=production --token=$ACKEE_VERCEL_API_TOKEN
+    - vercel build --prod --token=$ACKEE_VERCEL_API_TOKEN
+    - vercel deploy --prebuilt --prod --token=$ACKEE_VERCEL_API_TOKEN
+
+deploy_production_client:
+  stage: deploy
+  only:
+    - main
+  script:
+    - npm install --global vercel
+    - vercel pull --yes --environment=production --token=$CLIENT_VERCEL_API_TOKEN
+    - vercel build --prod --token=$CLIENT_VERCEL_API_TOKEN
+    - vercel deploy --prebuilt --prod --token=$CLIENT_VERCEL_API_TOKEN
