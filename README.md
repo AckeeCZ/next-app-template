@@ -2,10 +2,7 @@
 
 This is a project template for [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## How to use
-
-First, run the development server:
-
+## Install
 ```sh
 npx create-ackee-next-app
 
@@ -14,6 +11,14 @@ npx create-next-app --example=https://github.com/AckeeCZ/next-app-template/tree/
 ```
 
 Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-next-app)
+
+
+## How to use
+
+First, run the development server:
+```
+yarn dev
+```
 
 ## Guides
 
