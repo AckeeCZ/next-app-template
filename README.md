@@ -7,6 +7,8 @@ This is a project template for [`create-next-app`](https://github.com/vercel/nex
 First, run the development server:
 
 ```sh
+$ npx create-next-app --example=https://github.com/AckeeCZ/next-app-template --example-path=template
+# or
 $ yarn create next-app --example=https://github.com/AckeeCZ/next-app-template
 # or
 $ npm init next-app --example=https://github.com/AckeeCZ/next-app-template
