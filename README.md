@@ -7,11 +7,10 @@ This is a project template for [`create-next-app`](https://github.com/vercel/nex
 First, run the development server:
 
 ```sh
-$ npx create-next-app --example=https://github.com/AckeeCZ/next-app-template --example-path=template
-# or
-$ yarn create next-app --example=https://github.com/AckeeCZ/next-app-template
-# or
-$ npm init next-app --example=https://github.com/AckeeCZ/next-app-template
+npx create-ackee-next-app
+
+# or for specific branch `feat/something-new`
+npx create-next-app --example=https://github.com/AckeeCZ/next-app-template/tree/feat/something-new --example-path=template
 ```
 
 Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-next-app)
