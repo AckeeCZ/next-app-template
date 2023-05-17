@@ -1,6 +1,6 @@
-import { config } from 'config';
+import { config } from 'config/config';
 
-export const getQueryData = async <TOptions>(endpoint: string, options?: TOptions) => {
+export const getQueryData = async <TOptions extends RequestInit>(endpoint: string, options?: TOptions) => {
     const response = await fetch(config.api.url + endpoint, {
         method: 'GET',
         headers: {
@@ -9,7 +9,5 @@ export const getQueryData = async <TOptions>(endpoint: string, options?: TOption
         ...options,
     });
 
-    const jsonData = await response.json();
-
-    return jsonData;
+    return response.json();
 };

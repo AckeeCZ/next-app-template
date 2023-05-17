@@ -1,4 +1,3 @@
-export enum QueryKeyName {
-    // TODO: Delete this
-    TEST_DATA,
+export enum QueryKey {
+    Posts = 'posts',
 }

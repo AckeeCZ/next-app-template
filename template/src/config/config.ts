@@ -12,7 +12,7 @@ const defaultConfig = {
         home: '/',
     },
     endpoints: {
-        testData: '/recipes',
+        posts: '/recipes',
     },
 } as const;
 
