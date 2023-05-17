@@ -25,7 +25,7 @@
         "snapshot-storybook": "npx chromatic --project-token=<passwd_token>"
     },
     "dependencies": {
-        "@sentry/nextjs": "^7.8.0",
+        "@sentry/nextjs": "^7.52.1",
         "@stitches/react": "^1.2.8",
         "lodash": "^4.17.21",
         "next": "^13.4.0",
@@ -33,8 +33,8 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-intl": "^6.0.5",
-        "@tanstack/react-query": "^4.24.4",
-        "@tanstack/react-query-devtools": "^4.24.4",
+        "@tanstack/react-query": "^4.29.7",
+        "@tanstack/react-query-devtools": "^4.29.7",
         "reset.css": "^2.0.2"
     },
     "devDependencies": {

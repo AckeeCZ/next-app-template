@@ -1,12 +1,13 @@
-import type { GetServerSideProps, NextPage } from 'next';
+'use client';
+
 import Head from 'next/head';
 import Image from 'next/image';
+import { useQuery } from '@tanstack/react-query';
 
-import { QueryClient, dehydrate } from '@tanstack/react-query';
-import { config } from 'config';
-import { QueryKeyName, getQueryData, useAppMutation, useAppQuery } from 'modules/api';
-import { Heading } from 'modules/ui';
-import { css } from 'styles/theme';
+import { QueryKeyName, getQueryData } from '../modules/api';
+import { Heading } from '../modules/ui';
+import { css } from '../styles/theme';
+import { config } from '../config';
 
 const cardHoverStyle = {
     color: '#0070f3',
@@ -129,27 +130,24 @@ export const button = css({
     '&:active': buttonHoverStyle,
 });
 
-export const getServerSideProps: GetServerSideProps = async context => {
-    const queryClient = new QueryClient();
+const getTestData = async () => await getQueryData(config.endpoints.testData);
 
-    const testDataQueryFn = async () => getQueryData(config.endpoints.testData);
+export default async function Home() {
+    const initialData = await getTestData();
 
-    // Note: How to fetch data on server side
-    await queryClient.prefetchQuery([QueryKeyName.TEST_DATA], testDataQueryFn);
+    // Preload data for the next page
+    return <Posts posts={initialData} />;
+}
 
-    return {
-        props: {
-            dehydratedState: dehydrate(queryClient),
-        },
-    };
-};
-
-const Home: NextPage = () => {
-    // Note: How to fetch data on client side
-    const { data, isError, isLoading, isSuccess } = useAppQuery([QueryKeyName.TEST_DATA], config.endpoints.testData);
-
-    const { mutate } = useAppMutation(config.endpoints.testData, {
-        // Note: optional options
+interface Post {
+    id: number;
+    name: string;
+    duration: number;
+}
+const Posts = ({ posts }: { posts: Post[] }) => {
+    // Fetch data
+    const { data, isError, isLoading, isSuccess } = useQuery([QueryKeyName.TEST_DATA], getTestData, {
+        initialData: posts,
     });
 
     // TODO: Remove logs when ready
@@ -218,7 +216,6 @@ const Home: NextPage = () => {
                             onClick={async e => {
                                 e.preventDefault();
                                 // Note: Create special custom hook for mutations
-                                await mutate({ name: 'New recipe' });
                             }}
                             className={button()}
                         >
@@ -253,5 +250,3 @@ const Home: NextPage = () => {
         </div>
     );
 };
-
-export default Home;

@@ -1,4 +1,5 @@
-import { useRouter } from 'next/router';
+'use client';
+
 import { useMemo } from 'react';
 import type { MessageFormatElement } from 'react-intl';
 
@@ -10,7 +11,7 @@ import type { Locale as LocaleType } from '../types';
 import { Locale } from '../types';
 
 const useSwitchLang = (): [LocaleType, Record<MessageKey, string> | Record<MessageKey, MessageFormatElement[]>] => {
-    const { locale } = useRouter();
+    const locale = 'cs';
 
     const shortLocale: LocaleType = (locale as LocaleType) || Locale.CS;
 

@@ -10,7 +10,7 @@ const environment = process.env.NEXT_PUBLIC_BUILD_ENV || process.env.NODE_ENV;
 
 Sentry.init({
     environment,
-    dsn: SENTRY_DSN || 'project-Sentry-DSN',
+    dsn: SENTRY_DSN || '',
     // Adjust this value in production, or use tracesSampler for greater control
     tracesSampleRate: 1.0,
     // ...
