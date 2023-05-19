@@ -1,11 +1,10 @@
-import type { GetServerSideProps, NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { config } from 'config';
 import { QueryKeyName, getQueryData, useAppMutation, useAppQuery } from 'modules/api';
 import { Heading } from 'modules/ui';
+import type { GetServerSideProps, NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
 import { css } from 'styles/theme';
 
 const cardHoverStyle = {

@@ -1,5 +1,5 @@
 default:
-  image: node:16.16.0
+  image: node:20.2.0
 
 variables:
   ACKEE_VERCEL_API_TOKEN: ""
