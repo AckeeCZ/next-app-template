@@ -1,4 +1,7 @@
 // run `yarn localize` to generate translation files
+
+import type { Languages } from 'modules/intl/types';
+
 // import cs from './cs.json';
 const cs = {};
 
@@ -8,6 +11,10 @@ declare global {
     namespace FormatjsIntl {
         interface Message {
             ids: MessageKey;
+        }
+
+        interface IntlConfig {
+            locale: Languages;
         }
     }
 }
