@@ -1,5 +1,6 @@
 // run `yarn localize` to generate translation files
-import cs from './cs.json';
+// import cs from './cs.json';
+const cs = {};
 
 export type MessageKey = keyof typeof cs;
 
