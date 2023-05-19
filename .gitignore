@@ -25,3 +25,5 @@ template/src/translations/*.json
 # Env
 .env.local.json
 .env.local.jsonc
+
+.*.log

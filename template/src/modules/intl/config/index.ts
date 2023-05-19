@@ -1,3 +1,1 @@
-export const Languages = {
-    CS: 'cs',
-};
+export { languages } from './index.cjs';
