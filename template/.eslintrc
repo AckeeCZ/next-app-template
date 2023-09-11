@@ -6,7 +6,7 @@
         /**
          * Rules we don't want to apply
          */
-        "import/no-anonymous-default-export": "off",
+        "import/no-anonymous-default-export": "error",
         /**
          *  Rules override needed until we include them into ackee-eslint-config
          */
