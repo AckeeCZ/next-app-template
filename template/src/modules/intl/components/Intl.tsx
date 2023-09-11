@@ -1,7 +1,7 @@
 import { IntlProvider } from 'react-intl';
 import React from 'react';
 
-import useSwitchLang from '../hooks/useSwitchLang';
+import { useSwitchLang } from '../hooks/useSwitchLang';
 
 interface IntlProps {
     children: React.ReactNode;

@@ -1,7 +1,7 @@
 {
     "extends": ["@ackee/eslint-config", "prettier", "next", "next/core-web-vitals"],
     "parser": "@typescript-eslint/parser",
-    "plugins": ["react"],
+    "plugins": ["react", "@typescript-eslint/eslint-plugin"],
     "rules": {
         /**
          * Rules we don't want to apply
