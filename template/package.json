@@ -11,6 +11,8 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "lint:fix": "eslint --fix --ext .ts,.tsx ./src",
+        "lokse": "lokse open",
         "localize": "lokse update",
         "type-check": "tsc",
         "circular-modules": "madge --circular src",
@@ -30,9 +32,6 @@
     },
     "dependencies": {
         "@sentry/nextjs": "^7.52.1",
-        "@stitches/react": "^1.2.8",
-        "@tanstack/react-query": "^4.29.7",
-        "@tanstack/react-query-devtools": "^4.29.7",
         "lodash": "^4.17.21",
         "next": "13.4.2",
         "normalize.css": "^8.0.1",
@@ -44,6 +43,7 @@
     "devDependencies": {
         "@ackee/browserslist-config": "^3.0.0",
         "@ackee/eslint-config": "^4.1.1",
+        "@ackee/prettier-config": "^1.1.0",
         "@lokse/plugin-prettier": "^2.3.1",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^14.0.0",
@@ -66,9 +66,8 @@
         "lokse": "^2.3.1",
         "madge": "^6.0.0",
         "next-router-mock": "^0.9.3",
-        "prettier": "2.8.8",
-        "prettier-config-ackee": "^0.0.16",
-        "typescript": "~4.5.3"
+        "prettier": "^3.0.3",
+        "typescript": "5.0.4"
     },
     "optionalDependencies": {
         "@babel/core": "^7.21.8",
@@ -89,7 +88,7 @@
     ],
     "lint-staged": {
         "*.{ts,js,tsx,json,html,css,md}": [
-            "yarn format"
+            "yarn format && yarn lint:fix"
         ],
         "**/*.{png,jpeg,jpg,gif,svg,webp}": [
             "imagemin-lint-staged"

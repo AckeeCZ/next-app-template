@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { currentEnv } from 'constants/index';
+import { currentEnv } from '~constants';
 
 import type { EnvConfig } from './config.development';
 

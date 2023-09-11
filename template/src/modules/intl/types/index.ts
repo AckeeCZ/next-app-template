@@ -1,4 +1,4 @@
-import type { ValuesOf } from 'types/utils';
+import type { ValuesOf } from '~types/utils';
 
 import type { languages } from '../config';
 

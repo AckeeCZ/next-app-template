@@ -7,7 +7,7 @@ interface IntlProps {
     children: React.ReactNode;
 }
 
-const Intl = ({ children }: IntlProps) => {
+export const Intl = ({ children }: IntlProps) => {
     const [locale, messages] = useSwitchLang();
 
     return (
@@ -16,5 +16,3 @@ const Intl = ({ children }: IntlProps) => {
         </IntlProvider>
     );
 };
-
-export default Intl;

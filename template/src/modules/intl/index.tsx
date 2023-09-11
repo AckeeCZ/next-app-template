@@ -1,2 +1,2 @@
-export { default as Intl } from './components/Intl';
-export { default as useSwitchLang } from './hooks/useSwitchLang';
+export * from './components/Intl';
+export * from './hooks/useSwitchLang';

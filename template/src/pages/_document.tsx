@@ -1,7 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { getCssText } from 'styles/theme';
-
 class MyDocument extends Document {
     render() {
         return (
@@ -9,7 +7,6 @@ class MyDocument extends Document {
                 <Head>
                     {/** Preloaded fonts */}
                     {/* <link rel="preload" href="" /> */}
-                    <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                 </Head>
                 <body>
                     <Main />
