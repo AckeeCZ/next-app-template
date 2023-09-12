@@ -1,16 +1,4 @@
-const environments = {
-    PRODUCTION: 'production',
-    STAGE: 'stage',
-    DEVELOPMENT: 'development',
-};
-
-export const currentEnv = process.env.NEXT_PUBLIC_BUILD_ENV || process.env.NODE_ENV;
-
-export const isEnvDevelopment = currentEnv === environments.DEVELOPMENT;
-
-export const isEnvStage = currentEnv === environments.STAGE;
-
-export const isEnvProduction = currentEnv === environments.PRODUCTION;
+export const currentEnv = process.env.NEXT_PUBLIC_BUILD_ENV;
 
 export const isServerEnv = typeof window === 'undefined';
 

@@ -1,3 +1,5 @@
+import { AuthRoute, Route } from '~constants';
+
 type SplitString<S extends string, D extends string> = string extends S
     ? string[]
     : S extends ''
@@ -14,7 +16,7 @@ type Variables<S extends string> = SplitString<S, '/'>[number] extends `${infer 
 
 type Params<S extends string> = Variables<S> extends string ? { [key in Variables<S>]: string } : never;
 
-export function generatePath<T extends string>(route: T, params: Params<T>) {
+export function generatePath<T extends AuthRoute | Route>(route: T, params: Params<T>) {
     const regex = /[[](?<variable>\w+)[\]]/g;
 
     return route.toString().replace(regex, (_, key) => {

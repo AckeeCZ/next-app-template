@@ -1,7 +1,6 @@
 const config = {
     api: {
-        // TODO: Change with your API url
-        url: 'https://my-json-server.typicode.com/AckeeCZ/web-task-cookbook-fake-api',
+        url: '',
     },
 } as const;
 
