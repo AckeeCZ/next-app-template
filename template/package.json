@@ -22,14 +22,13 @@
         "ci-test": "jest --ci",
         "ci-lint": "yarn lint",
         "ci-circular-modules": "yarn circular-modules",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook",
         "generate-icons": "npx @svgr/cli src/modules/ui/components/Icons/Icons/assets",
-        "snapshot-storybook": "npx chromatic --project-token=<passwd_token>",
         "audit:high": "yarn audit --level high --groups dependencies",
         "prepare": "husky install",
         "version": "yarn changelog && code CHANGELOG.md --wait && git add CHANGELOG.md .env",
-        "changelog": "git fetch origin && npx gitmoji-changelog"
+        "changelog": "git fetch origin && npx gitmoji-changelog",
+        "storybook:dev": "storybook dev -p 6006",
+        "storybook:build": "storybook build"
     },
     "dependencies": {
         "@sentry/nextjs": "^7.52.1",
@@ -73,21 +72,17 @@
         "madge": "^6.1.0",
         "next-router-mock": "^0.9.9",
         "prettier": "^3.0.3",
-        "typescript": "5.0.4"
-    },
-    "optionalDependencies": {
-        "@babel/core": "^7.21.8",
-        "@storybook/addon-actions": "^6.5.16",
-        "@storybook/addon-essentials": "^6.5.16",
-        "@storybook/addon-interactions": "^6.5.16",
-        "@storybook/addon-links": "^6.5.16",
-        "@storybook/builder-webpack5": "^6.5.16",
-        "@storybook/manager-webpack5": "^6.5.16",
-        "@storybook/react": "^6.5.16",
-        "@storybook/testing-library": "^0.1.0",
-        "babel-loader": "^8.3.0",
-        "storybook-addon-next": "^1.8.0",
-        "tsconfig-paths-webpack-plugin": "^4.0.1"
+        "typescript": "5.0.4",
+        "@babel/core": "^7.22.17",
+        "@storybook/addon-actions": "^7.4.1",
+        "@storybook/addon-essentials": "^7.4.1",
+        "@storybook/addon-interactions": "^7.4.1",
+        "@storybook/jest": "^0.2.2",
+        "@storybook/nextjs": "^7.4.1",
+        "@storybook/react": "^7.4.1",
+        "@storybook/testing-library": "^0.2.0",
+        "eslint-plugin-storybook": "^0.6.13",
+        "storybook": "^7.4.1"
     },
     "browserslist": [
         "extends @ackee/browserslist-config"
