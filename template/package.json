@@ -35,6 +35,7 @@
         "@sentry/nextjs": "^7.52.1",
         "@tanstack/react-query": "^4.35.0",
         "lodash": "^4.17.21",
+        "loglevel": "^1.8.1",
         "next": "13.4.19",
         "normalize.css": "^8.0.1",
         "react": "^18.2.0",
