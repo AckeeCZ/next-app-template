@@ -10,7 +10,7 @@ const nextConfig = {
 
     i18n: {
         locales: Object.values(languages),
-        defaultLocale: languages.CS,
+        defaultLocale: languages.EN,
         localeDetection: true,
     },
 

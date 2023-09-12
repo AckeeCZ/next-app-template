@@ -1,22 +1,9 @@
-// run `yarn localize` to generate translation files
-
-import type { Language } from '~modules/intl/types';
-
-// import cs from './cs.json';
-const cs = {};
-
-export type MessageKey = keyof typeof cs;
-
-declare global {
-    namespace FormatjsIntl {
-        interface Message {
-            ids: MessageKey;
-        }
-
-        interface IntlConfig {
-            locale: Language;
-        }
-    }
-}
-
-export { cs };
+/**
+ * - Run `yarn localize` to generate translation files.
+ * - Run `yarn lokse` to open the spreashet with translations.
+ * - Export here all translations for the app. 🌐
+ * - All the rest please place to the `modules/intl`. 🙌
+ */
+export const en = {
+    title: 'Hello World!',
+} as const;

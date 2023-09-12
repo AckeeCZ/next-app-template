@@ -1,3 +1,3 @@
 exports.languages = Object.freeze({
-    CS: 'cs',
+    EN: 'en',
 });

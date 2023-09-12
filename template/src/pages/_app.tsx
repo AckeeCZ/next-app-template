@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { AppProps } from 'next/app';
 
-import { Intl } from '~modules/intl';
+import { Intl } from '~modules/intl/components';
 
 import 'normalize.css';
 import 'reset.css';

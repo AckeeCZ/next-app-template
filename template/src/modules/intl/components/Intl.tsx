@@ -1,17 +1,17 @@
 import { IntlProvider } from 'react-intl';
 import React from 'react';
 
-import { useSwitchLang } from '../hooks/useSwitchLang';
+import { useTranslations } from '../hooks';
 
-interface IntlProps {
+export interface IntlProps {
     children: React.ReactNode;
 }
 
 export const Intl = ({ children }: IntlProps) => {
-    const [locale, messages] = useSwitchLang();
+    const [lang, messages] = useTranslations();
 
     return (
-        <IntlProvider locale={locale} messages={messages}>
+        <IntlProvider locale={lang} messages={messages}>
             {children}
         </IntlProvider>
     );
