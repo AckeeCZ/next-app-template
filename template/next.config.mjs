@@ -1,9 +1,9 @@
-import './src/env/index.mjs';
+// import './src/env/index.mjs';
 
 import { withSentryConfig } from '@sentry/nextjs';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-import { languages } from './src/modules/intl/config/index.mjs';
+import { defaultLocale, languages } from './src/modules/intl/config/lang.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,7 +12,7 @@ const nextConfig = {
 
     i18n: {
         locales: Object.values(languages),
-        defaultLocale: languages.EN,
+        defaultLocale: defaultLocale,
         localeDetection: true,
     },
 

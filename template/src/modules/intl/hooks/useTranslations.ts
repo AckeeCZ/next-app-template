@@ -1,4 +1,4 @@
-import * as translations from '~translations';
+import { translations } from '~translations';
 
 import { useLang } from './useLang';
 

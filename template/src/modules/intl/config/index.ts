@@ -1,5 +1,3 @@
-import { languages } from './index.mjs';
+import { defaultLocale, languages } from './lang.mjs';
 
-export { languages };
-
-export const defaultLocale = languages.EN;
+export { defaultLocale, languages };

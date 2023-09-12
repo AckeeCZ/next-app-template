@@ -4,6 +4,10 @@
  * - Export here all translations for the app. 🌐
  * - All the rest please place to the `modules/intl`. 🙌
  */
-export const en = {
-    title: 'Hello World!',
-} as const;
+import { Language } from '~modules/intl/types';
+
+import en from './en.json';
+
+export const translations = {
+    en,
+} satisfies Record<Language, Record<string, string>>;
