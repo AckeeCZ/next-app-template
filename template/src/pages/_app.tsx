@@ -7,17 +7,21 @@ import { Intl } from '~modules/intl/components';
 import 'normalize.css';
 import 'reset.css';
 
+import { ErrorBoundary } from '@sentry/react';
+
 interface ExtendedAppProps extends AppProps {}
 
 function App({ Component, pageProps }: ExtendedAppProps) {
     return (
-        <QueryProvider>
-            <Hydrate state={pageProps.dehydratedState}>
-                <Intl>
-                    <Component {...pageProps} />
-                </Intl>
-            </Hydrate>
-        </QueryProvider>
+        <ErrorBoundary>
+            <QueryProvider>
+                <Hydrate state={pageProps.dehydratedState}>
+                    <Intl>
+                        <Component {...pageProps} />
+                    </Intl>
+                </Hydrate>
+            </QueryProvider>
+        </ErrorBoundary>
     );
 }
 
