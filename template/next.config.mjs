@@ -1,3 +1,5 @@
+import './src/env/index.mjs';
+
 import { withSentryConfig } from '@sentry/nextjs';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 

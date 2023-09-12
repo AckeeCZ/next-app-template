@@ -1,10 +1,10 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { currentEnv } from '~constants';
+import { buildEnv } from '~constants';
 import { initLogger } from '~modules/logger';
 
 initLogger({
-    outputToConsole: currentEnv === 'development',
+    outputToConsole: buildEnv === 'development',
 });
 
 class MyDocument extends Document {

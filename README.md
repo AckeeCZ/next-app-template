@@ -19,7 +19,4 @@ Also check [`create-ackee-next-app`](https://github.com/AckeeCZ/create-ackee-nex
 -   [Using Sass](./docs/sass.md)
 -   [Authentication with Firebase and `next-auth`](./docs/next-auth.md)
 
-## TODO
 
--   Use @ackee/fela
--   Use theme values from css vars

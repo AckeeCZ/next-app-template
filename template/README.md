@@ -6,7 +6,10 @@ We are using our skeleton written in Typescript and based on create-next-app =>Â
 
 ## Getting Started
 
-1. Rename `.env.defaults` to `.env.local` and update it with real values.
+1. Copy `.env.template` to `.env.local` and update it with real values.
+
+    > Be aware that env. variables are validated with predefined zod schema in `src/env/index.mjs`.
+    > If you need to add/remove a new env. var., don't forget the update the schema too.
 
 2. Launch development server:
 
@@ -32,18 +35,15 @@ yarn localize
 To open translations:
 
 ```sh
-yarn open
+yarn lokse
 ```
 
 ## Storybook
 
 We use Storybook for design system of UI components. You can build it and run with:
 
-build-storybook
-
 ```bash
-yarn build-storybook
-yarn storybook
+yarn storybook:dev
 ```
 
 ## Icon generator

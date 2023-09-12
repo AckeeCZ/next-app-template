@@ -1,10 +1,10 @@
 import merge from 'lodash/merge';
 
-import { currentEnv } from '~constants';
+import { buildEnv } from '~constants';
 
 import type { EnvConfig } from './config.development';
 
-const envConfig = require(`./config.${currentEnv}.ts`).default;
+const envConfig = require(`./config.${buildEnv}.ts`).default;
 
 const defaultConfig = {} as const;
 
