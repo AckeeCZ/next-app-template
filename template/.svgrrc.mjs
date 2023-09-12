@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     replaceAttrValues: {
         // Note: Add another here if needed
         '#000': 'currentColor',

@@ -1,20 +1,23 @@
-import type { ReactNode } from 'react';
+import { Hydrate } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 
+import { QueryProvider } from '~modules/api/components';
 import { Intl } from '~modules/intl/components';
 
 import 'normalize.css';
 import 'reset.css';
 
-interface ExtendedAppProps extends AppProps {
-    children: ReactNode;
-}
+interface ExtendedAppProps extends AppProps {}
 
 function App({ Component, pageProps }: ExtendedAppProps) {
     return (
-        <Intl>
-            <Component {...pageProps} />
-        </Intl>
+        <QueryProvider>
+            <Hydrate state={pageProps.dehydratedState}>
+                <Intl>
+                    <Component {...pageProps} />
+                </Intl>
+            </Hydrate>
+        </QueryProvider>
     );
 }
 

@@ -1,7 +1,7 @@
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const { withSentryConfig } = require('@sentry/nextjs');
+import { withSentryConfig } from '@sentry/nextjs';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-const { languages } = require('./src/modules/intl/config/index.cjs');
+import { languages } from './src/modules/intl/config/index.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -43,4 +43,4 @@ const sentryWebpackPluginOptions = {
 
 // Make sure adding Sentry options is the last code to run before exporting, to
 // ensure that your source maps include changes from all other Webpack plugins
-module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+export default withSentryConfig(nextConfig, sentryWebpackPluginOptions);
