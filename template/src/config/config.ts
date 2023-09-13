@@ -1,4 +1,4 @@
-import merge from 'lodash/merge';
+import { assign } from 'radash';
 
 import { buildEnv } from '~constants';
 
@@ -12,6 +12,6 @@ type DefaultConfig = typeof defaultConfig;
 
 export type Config = DefaultConfig & EnvConfig;
 
-const appConfig: Config = merge(defaultConfig, envConfig);
+const appConfig: Config = assign(defaultConfig, envConfig);
 
 export { appConfig };
