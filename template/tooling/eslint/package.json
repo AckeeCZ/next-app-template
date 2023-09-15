@@ -1,0 +1,39 @@
+{
+  "name": "@acme/eslint-config",
+  "version": "0.2.0",
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "./nextjs.js"
+  ],
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@tanstack/eslint-plugin-query": "^4.34.1",
+    "eslint-config-turbo": "^1.10.13",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-compat": "^4.2.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "@acme/prettier-config": "^0.1.0",
+    "@acme/tsconfig": "^0.1.0",
+
+    "eslint": "^8.49.0",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true
+  },
+  "prettier": "@acme/prettier-config"
+}

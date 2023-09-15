@@ -27,7 +27,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
+apps/web/.env.local
 
 # vercel
 .vercel
@@ -38,6 +38,8 @@ yarn-error.log*
 # Sentry
 .sentryclirc
 
-src/modules/api/codegen
+apps/web/src/modules/api/codegen
 
 !src/translations/*.mock.json
+
+.turbo
