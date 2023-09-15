@@ -1,4 +1,4 @@
-import { AuthRoute, Route } from '~constants';
+import type { AuthRoute, Route } from '~constants';
 
 type SplitString<S extends string, D extends string> = string extends S
     ? string[]

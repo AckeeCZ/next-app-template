@@ -1,6 +1,5 @@
 import { env } from '~env';
 
-// export const buildEnv = process.env.NEXT_PUBLIC_BUILD_ENV;
 export const buildEnv = env.NEXT_PUBLIC_BUILD_ENV;
 
 export const isServerEnv = typeof window === 'undefined';

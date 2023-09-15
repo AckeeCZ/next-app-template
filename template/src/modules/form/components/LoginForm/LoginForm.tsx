@@ -2,11 +2,9 @@ import { useForm } from 'react-hook-form';
 
 import { useLocalizedResolver } from '~modules/form/hooks';
 
-import { LoginFormSchema, loginFormSchema } from './schema';
+import { loginFormSchema, type LoginFormSchema } from './schema';
 
-export interface LoginFormProps {}
-
-export const LoginForm = ({}: LoginFormProps) => {
+export const LoginForm = () => {
     const {
         register,
         handleSubmit,

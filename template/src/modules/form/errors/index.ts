@@ -1,4 +1,4 @@
-import { MessageKey } from '~modules/intl/types';
+import type { MessageKey } from '~modules/intl/types';
 
 export const formError = {
     required: 'form.error.required',

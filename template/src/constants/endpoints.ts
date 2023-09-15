@@ -1,4 +1,4 @@
-import { ValuesOf } from '~types/utils';
+import type { ValuesOf } from '~types/utils';
 
 export const endpoints = {
     TestData: '/recipes',

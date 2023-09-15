@@ -4,9 +4,9 @@
  * - Export here all translations for the app. 🌐
  * - All the rest please place to the `modules/intl`. 🙌
  */
-import { Language } from '~modules/intl/types';
+import type { Language } from '~modules/intl/types';
 
-import en from './en.json';
+import en from './en.mock.json';
 
 export const translations = {
     en,

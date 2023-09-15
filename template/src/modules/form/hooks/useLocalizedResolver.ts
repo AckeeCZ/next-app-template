@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { FieldValues, ResolverOptions, ResolverResult } from 'react-hook-form';
+import type { FieldValues, ResolverOptions, ResolverResult } from 'react-hook-form';
 import { useIntl } from 'react-intl';
-import { ZodObject } from 'zod';
+import type { ZodObject } from 'zod';
 import { useCallback } from 'react';
 
 import { isMessageKey } from '~modules/intl/utils';

@@ -1,0 +1,8 @@
+{
+    "form.error.required": "Required",
+    "form.error.email": "Invalid email",
+    "form.error.password.length": "At least 8 characters",
+    "form.error.password.casing": "One upper and lower case letter",
+    "form.error.password.numeric": "One number",
+    "form.error.password.equality": "Password should match"
+}

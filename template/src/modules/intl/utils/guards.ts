@@ -1,9 +1,9 @@
-import { IntlShape } from 'react-intl';
+import type { IntlShape } from 'react-intl';
 
 import { translations } from '~translations';
 
 import { defaultLocale } from '../config/index';
-import { FormattedMessageProps, MessageKey } from '../types';
+import type { FormattedMessageProps, MessageKey } from '../types';
 
 export function isFormattedMessageValues(obj: any): obj is Parameters<IntlShape['formatMessage']>[1] {
     return obj && typeof obj === 'object';

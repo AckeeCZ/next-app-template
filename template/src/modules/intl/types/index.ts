@@ -1,10 +1,10 @@
 import type { FormattedMessage } from 'react-intl';
-import { type ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 
-import { translations } from '~translations';
+import type { translations } from '~translations';
 import type { ValuesOf } from '~types/utils';
 
-import { type languages } from '../config';
+import type { languages } from '../config';
 
 export type FormattedMessageProps = ComponentProps<typeof FormattedMessage>;
 

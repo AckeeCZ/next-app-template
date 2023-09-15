@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
 import { defaultLocale } from '../config';
-import { Language } from '../types';
+import type { Language } from '../types';
 
 /**
  * Parse locale that can be in `en-US` or `en` format
