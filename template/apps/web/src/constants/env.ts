@@ -1,4 +1,4 @@
-import { env } from '../env';
+import { env } from '~env';
 
 export const buildEnv = env.NEXT_PUBLIC_BUILD_ENV;
 

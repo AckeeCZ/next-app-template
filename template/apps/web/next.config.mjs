@@ -1,6 +1,9 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
+import "./src/env/env.mjs";
+
+
 import { languages } from './src/modules/intl/config/index.cjs';
 
 /** @type {import('next').NextConfig} */
