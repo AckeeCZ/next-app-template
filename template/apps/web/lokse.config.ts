@@ -1,15 +1,12 @@
-import type { LokseConfig } from 'lokse';
+import { createLokseConfig } from '@workspace/localization/lokse';
 
-import { languages } from './src/modules/intl/config';
+/*
+import { languages } from './src/modules/intl/config/index';
+*/
 
-const config: LokseConfig = {
-    sheetId: '',
-    dir: 'src/translations',
+export default createLokseConfig({
+    sheets: [''],
+    /*
     languages: Object.values(languages),
-    column: 'key_web',
-    // TODO: Fill concrete sheet's names
-    sheets: [],
-    plugins: ['@lokse/plugin-prettier'],
-};
-
-export default config;
+*/
+});

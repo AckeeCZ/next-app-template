@@ -1,19 +1,17 @@
-import { ErrorBoundary } from '@sentry/react';
+import type { AppProps } from 'next/app';
 import { Hydrate } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import type { AppProps } from 'next/app';
-
 import { buildEnv } from '~constants';
 import { QueryProvider } from '~modules/api/components';
-import { Intl } from '~modules/intl/components';
-import { initLogger } from '~modules/logger';
+import { Intl } from '~modules/intl';
+
+import { ErrorBoundary } from '@workspace/errors';
+import { initLogger } from '@workspace/logger';
 
 import 'normalize.css';
 import 'reset.css';
 
-initLogger({
-    outputToConsole: buildEnv === 'development',
-});
+initLogger(buildEnv === 'development');
 
 interface ExtendedAppProps extends AppProps {}
 

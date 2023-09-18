@@ -1,3 +1,2 @@
-import { defaultLocale, languages } from './lang.mjs';
-
-export { defaultLocale, languages };
+export * from './langs';
+export * from './localization';

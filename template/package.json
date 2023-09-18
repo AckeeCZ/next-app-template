@@ -1,27 +1,25 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "npx turbo run build",
-    "dev": "turbo run dev --concurrency 15",
-    "lint": "turbo run lint",
-    "format": "prettier --config ./prettier.config.js --ignore-path .gitignore \"./*.{ts,js,tsx,json,html,css,md}\" --write"
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "prettier-config-custom": "*",
-    "turbo": "^1.9.3"
-  },
-  "packageManager": "yarn@1.22.19",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "tooling/*"
-  ],
-  "dependencies": {
-    "prettier": "^3.0.3",
-    "turbo": "^1.10.13",
-    "typescript": "^5.2.2",
-    "@manypkg/cli": "^0.21.0"
-  }
+    "private": true,
+    "scripts": {
+        "build": "npx turbo run build",
+        "dev": "turbo run dev --concurrency 15",
+        "lint": "turbo run lint",
+        "format": "turbo run format"
+    },
+    "devDependencies": {
+        "@workspace/prettier-config": "*",
+        "turbo": "^1.10.14"
+    },
+    "workspaces": [
+        "apps/*",
+        "packages/*",
+        "tooling/*"
+    ],
+    "dependencies": {
+        "prettier": "^3.0.3",
+        "turbo": "^1.10.14",
+        "typescript": "^5.2.2",
+        "@manypkg/cli": "^0.21.0"
+    },
+    "prettier": "@workspace/prettier-config"
 }

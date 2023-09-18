@@ -1,10 +1,9 @@
+import { useCallback } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { isMessageKey, MessageKey } from '~modules/intl';
 import type { FieldValues, ResolverOptions, ResolverResult } from 'react-hook-form';
 import { useIntl } from 'react-intl';
-import type { ZodObject } from 'zod';
-import { useCallback } from 'react';
-
-import { isMessageKey } from '../../intl/utils';
+import { ZodObject } from 'zod';
 
 export type LocalizedZodResolver = <TFieldValues extends FieldValues, TContext>(
     values: TFieldValues,
@@ -18,19 +17,20 @@ export type LocalizedZodResolver = <TFieldValues extends FieldValues, TContext>(
 export function useLocalizedResolver<Schema extends ZodObject<any>>(schema: Schema): ReturnType<typeof zodResolver> {
     const { formatMessage } = useIntl();
 
-    const schemaResolver = zodResolver(schema);
+    // TODO: remove the `as any` cast when the zod types are fixed  (remove all the casting)
+    const schemaResolver = zodResolver(schema as any);
 
     const localizedZodResolver = useCallback<LocalizedZodResolver>(
         async (values, context, options) => {
             const result = await schemaResolver(values, context, options);
 
             const translatedErrors = Object.entries(result.errors).map(([key, value]) => {
-                if (value && 'message' in value && isMessageKey(value.message)) {
+                if (value && 'message' in value && isMessageKey(value.message as string)) {
                     return [
                         key,
                         {
                             ...value,
-                            message: formatMessage({ id: value.message }),
+                            message: formatMessage({ id: value.message as MessageKey }),
                         },
                     ];
                 }

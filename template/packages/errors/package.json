@@ -1,0 +1,13 @@
+{
+    "name": "@workspace/errors",
+    "version": "0.0.0",
+    "peerDependencies": {
+        "@sentry/nextjs": "7.x"
+    },
+    "devDependencies": {
+        "@sentry/nextjs": "^7.64.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

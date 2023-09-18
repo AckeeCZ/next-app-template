@@ -1,5 +1,7 @@
 import { useForm } from 'react-hook-form';
 
+import { Button } from '@workspace/ui';
+
 import { useLocalizedResolver } from '../../hooks';
 import { loginFormSchema, type LoginFormSchema } from './schema';
 
@@ -19,6 +21,7 @@ export const LoginForm = () => {
             <input type='password' {...register('password')} />
             {errors.password?.message && <p>{errors.password?.message}</p>}
             <input type='submit' />
+            <Button />
         </form>
     );
 };

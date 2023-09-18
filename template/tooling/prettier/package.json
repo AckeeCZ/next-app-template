@@ -1,5 +1,5 @@
 {
-  "name": "@acme/prettier-config",
+  "name": "@workspace/prettier-config",
   "private": true,
   "version": "0.1.0",
   "main": "index.mjs",
@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@ackee/prettier-config": "^1.1.0"
-
   },
   "devDependencies": {
-    "@acme/tsconfig": "^0.1.0",
+    "@workspace/tsconfig": "*",
     "typescript": "^5.2.2"
   },
-  "prettier": "@acme/prettier-config"
+
+  "prettier": "@workspace/prettier-config"
 }
