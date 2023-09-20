@@ -2,19 +2,19 @@
 
 # dependencies
 node_modules
-/.pnp
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage
 
 # next.js
-/.next/
-/out/
-/build-storybook.log
+.next/
+out/
+build-storybook.log
 
 # production
-/build
+build
 
 # misc
 .DS_Store
