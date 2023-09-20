@@ -1,17 +1,24 @@
-import { useRouter } from "next/router";
+import type { CreateTranslations } from '../types';
+import type { CreateUseLang } from './useLang';
 
-import type { GeneralTranslations, StringKeys } from "../types";
-
-export const useTranslations = <Translations extends GeneralTranslations>(
-  translations: Translations,
-  defaultLocale: StringKeys<Translations>,
+export const createUseTranslations = <
+    Lang extends string,
+    Translations extends CreateTranslations<Lang>,
+    UseLang extends CreateUseLang<Lang>,
+>(
+    translations: Translations,
+    useLang: UseLang,
 ) => {
-  const { locale } = useRouter();
-  const lang =
-    locale && Object.keys(translations).includes(locale)
-      ? locale
-      : defaultLocale;
-  const messages = translations[lang];
+    return function useTranslations() {
+        const lang = useLang();
+        const messages = translations[lang];
 
-  return [lang, messages] as const;
+        return [lang, messages] as const;
+    };
 };
+
+export type CreateUseTranslations<
+    Lang extends string = string,
+    Translations extends CreateTranslations<Lang> = CreateTranslations<Lang>,
+    UseLang extends CreateUseLang<Lang> = CreateUseLang<Lang>,
+> = ReturnType<typeof createUseTranslations<Lang, Translations, UseLang>>;

@@ -1,14 +1,10 @@
 {
     "private": true,
     "scripts": {
-        "build": "npx turbo run build",
+        "build": "turbo run build",
         "dev": "turbo run dev --concurrency 15",
         "lint": "turbo run lint",
         "format": "turbo run format"
-    },
-    "devDependencies": {
-        "@workspace/prettier-config": "*",
-        "turbo": "^1.10.14"
     },
     "workspaces": [
         "apps/*",
@@ -16,9 +12,9 @@
         "tooling/*"
     ],
     "dependencies": {
-        "prettier": "^3.0.3",
         "turbo": "^1.10.14",
-        "typescript": "^5.2.2",
+        "@workspace/prettier-config": "*",
+        "@workspace/tsconfig": "*",
         "@manypkg/cli": "^0.21.0"
     },
     "prettier": "@workspace/prettier-config"

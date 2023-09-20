@@ -1,7 +1,9 @@
 /** @type {import('eslint').Linter.Config} */
 
 const config = {
-    extends: ['next/core-web-vitals', 'prettier'],
+    // TODO: @ackee/eslint-config depends on eslint-config-react-app which used old @typescript-eslint/parser and @typescript-eslint/eslint-plugin :(
+    // '@ackee/eslint-config',
+    extends: ['next/core-web-vitals', 'turbo', 'prettier'],
     parser: '@typescript-eslint/parser',
     plugins: ['@tanstack/query', '@typescript-eslint/eslint-plugin'],
     rules: {
@@ -50,12 +52,6 @@ const config = {
 
         '@tanstack/query/exhaustive-deps': 'error',
         '@tanstack/query/prefer-query-object-syntax': 'error',
-    },
-
-    settings: {
-        next: {
-            rootDir: './src',
-        },
     },
 };
 

@@ -12,8 +12,8 @@ coverage
 dist/
 
 # next.js
-.next/
-out/
+.next
+out
 build-storybook.log
 
 # production
@@ -46,3 +46,5 @@ apps/web/src/modules/api/codegen
 !src/translations/*.mock.json
 
 .turbo
+
+node_modules

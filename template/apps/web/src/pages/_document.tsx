@@ -1,5 +1,13 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
+import { initLogger } from '@workspace/logger';
+
+import { buildEnv } from '~constants/env';
+
+initLogger({
+    outputToConsole: buildEnv === 'development',
+});
+
 class MyDocument extends Document {
     render() {
         return (

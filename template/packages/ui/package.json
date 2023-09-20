@@ -7,13 +7,13 @@
     "license": "MIT",
     "scripts": {
         "build": "tsc -p tsconfig.json && tsc-alias",
-        "prepare": "yarn build",
+        "postinstall": "yarn build",
         "dev": "yarn build && chokidar './src/**/*.{ts,tsx}' -c 'yarn build'",
         "lint": "eslint \"**/*.{ts,tsx}*\"",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx|json|html|css|md)\" --write",
-        "generate-icons": "npx @svgr/cli src/components/Icons/Icons/assets && yarn format && eslint --fix \"src/components/Icons/Icons/**/*.tsx\"",
+        "generate-icons": "@svgr/cli src/components/Icons/Icons/assets && yarn format && eslint --fix \"src/components/Icons/Icons/**/*.tsx\"",
         "chromatic": "source .env.local; npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
     },
     "peerDependencies": {
@@ -21,8 +21,7 @@
         "react": "18.x",
         "react-intl": "6.x"
     },
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "@babel/core": "^7.22.20",
         "@storybook/addon-actions": "^7.4.2",
@@ -35,7 +34,6 @@
         "@svgr/cli": "^8.1.0",
         "@types/react": "^18.2.21",
         "@types/react-dom": "^18.2.7",
-        "@typescript-eslint/parser": "^6.7.0",
         "babel-loader": "^9.1.3",
         "chokidar-cli": "^3.0.0",
         "eslint-plugin-storybook": "^0.6.13",
@@ -45,11 +43,9 @@
         "@workspace/tsconfig": "*",
         "@workspace/localization": "*",
         "@workspace/ts-utils": "*",
-        "react-intl": "6.4.7",
         "storybook": "^7.4.2",
         "tsc-alias": "^1.8.6"
     },
-
     "eslintConfig": {
         "root": true,
         "extends": [

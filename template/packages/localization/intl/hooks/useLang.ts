@@ -13,3 +13,5 @@ export function createUseLang<Lang extends string>(defaultLocale: Lang) {
         return lang;
     };
 }
+
+export type CreateUseLang<Lang extends string> = ReturnType<typeof createUseLang<Lang>>;

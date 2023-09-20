@@ -1,11 +1,12 @@
-import { createLocalizationModule, type FormattedMessageProps } from '@workspace/localization/intl';
 import { translations } from '~translations';
 
-import type { Language, Translations } from '../types';
-import { languages } from './langs';
+import { createLocalizationModule, type FormattedMessageProps } from '@workspace/localization/intl';
 
-export const { Intl, isMessageKey, useLang } = createLocalizationModule<Translations, Language>({
-    defaultLocale: languages.EN,
+import type { Language, Translations } from '../types';
+import { defaultLocale } from './langs';
+
+export const { Intl, isMessageKey, useLang, useTranslations } = createLocalizationModule<Language, Translations>({
+    defaultLocale,
     translations,
 });
 
