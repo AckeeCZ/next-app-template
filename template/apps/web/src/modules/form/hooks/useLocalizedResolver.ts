@@ -14,13 +14,14 @@ export type LocalizedZodResolver = <TFieldValues extends FieldValues, TContext>(
 /**
  * Extend the zodResolver with the ability to translate the error messages.
  */
-export function useLocalizedResolver<Schema extends ZodObject<any>>(schema: Schema): ReturnType<typeof zodResolver> {
+export function useLocalizedResolver<Schema extends ZodObject<any, any>>(
+    schema: Schema,
+): ReturnType<typeof zodResolver> {
     const { formatMessage } = useIntl();
 
-    // TODO: remove the `as any` cast when the zod types are fixed  (remove all the casting)
-    const schemaResolver = zodResolver(schema as any);
+    const schemaResolver = zodResolver(schema);
 
-    const localizedZodResolver = useCallback<LocalizedZodResolver>(
+    return useCallback<LocalizedZodResolver>(
         async (values, context, options) => {
             const result = await schemaResolver(values, context, options);
 
@@ -44,6 +45,4 @@ export function useLocalizedResolver<Schema extends ZodObject<any>>(schema: Sche
         },
         [schemaResolver, formatMessage],
     );
-
-    return localizedZodResolver;
 }
