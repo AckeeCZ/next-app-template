@@ -1,4 +1,6 @@
-import { generatePath } from '../generatePath';
+import { createGeneratePath } from '../generatePath';
+
+const generatePath = createGeneratePath();
 
 describe('generatePath', () => {
     it('generatesPath with one variable', () => {

@@ -1,22 +1,13 @@
-// run `yarn localize` to generate translation files
+/**
+ * - Run `yarn localize` to generate translation files.
+ * - Run `yarn lokse` to open the spreashet with translations.
+ * - Export here all translations for the app. 🌐
+ * - All the rest please place to the `modules/intl`. 🙌
+ */
+import type { Language } from '~modules/intl/types';
 
-import type { Language } from 'modules/intl/types';
+import en from './en.mock.json';
 
-// import cs from './cs.json';
-const cs = {};
-
-export type MessageKey = keyof typeof cs;
-
-declare global {
-    namespace FormatjsIntl {
-        interface Message {
-            ids: MessageKey;
-        }
-
-        interface IntlConfig {
-            locale: Language;
-        }
-    }
-}
-
-export { cs };
+export const translations = {
+    en,
+} satisfies Record<Language, Record<string, string>>;

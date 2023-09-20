@@ -1,3 +1,5 @@
+import type { AuthRoute, Route } from '~constants';
+
 type SplitString<S extends string, D extends string> = string extends S
     ? string[]
     : S extends ''
@@ -14,14 +16,18 @@ type Variables<S extends string> = SplitString<S, '/'>[number] extends `${infer 
 
 type Params<S extends string> = Variables<S> extends string ? { [key in Variables<S>]: string } : never;
 
-export function generatePath<T extends string>(route: T, params: Params<T>) {
-    const regex = /[[](?<variable>\w+)[\]]/g;
+export function createGeneratePath<T extends string = string>() {
+    return function generatePath(route: T, params: Params<T>) {
+        const regex = /[[](?<variable>\w+)[\]]/g;
 
-    return route.toString().replace(regex, (_, key) => {
-        const variableKey = key as keyof Params<T>;
+        return route.toString().replace(regex, (_, key) => {
+            const variableKey = key as keyof Params<T>;
 
-        if (!params[variableKey]) throw Error(`Key ${key} was not provided`);
+            if (!params[variableKey]) throw Error(`Key ${key} was not provided`);
 
-        return params[variableKey];
-    });
+            return params[variableKey];
+        });
+    };
 }
+
+export const generatePath = createGeneratePath<AuthRoute | Route>();

@@ -1,6 +1,11 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
-import { getCssText } from 'styles/theme';
+import { buildEnv } from '~constants';
+import { initLogger } from '~modules/logger';
+
+initLogger({
+    outputToConsole: buildEnv === 'development',
+});
 
 class MyDocument extends Document {
     render() {
@@ -9,7 +14,6 @@ class MyDocument extends Document {
                 <Head>
                     {/** Preloaded fonts */}
                     {/* <link rel="preload" href="" /> */}
-                    <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                 </Head>
                 <body>
                     <Main />

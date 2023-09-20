@@ -1,32 +1,34 @@
+import { ErrorBoundary } from '@sentry/react';
 import { Hydrate } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import type { AppProps } from 'next/app';
-import type { ReactNode } from 'react';
 
-import { QueryClientProvider } from 'modules/api';
-import { Intl } from 'modules/intl';
+import { buildEnv } from '~constants';
+import { QueryProvider } from '~modules/api/components';
+import { Intl } from '~modules/intl/components';
+import { initLogger } from '~modules/logger';
+
 import 'normalize.css';
 import 'reset.css';
-import { globalStyles } from 'styles/globals';
 
-interface ExtendedAppProps extends AppProps {
-    children: ReactNode;
-}
+initLogger({
+    outputToConsole: buildEnv === 'development',
+});
+
+interface ExtendedAppProps extends AppProps {}
 
 function App({ Component, pageProps }: ExtendedAppProps) {
-    globalStyles();
-
     return (
-        <>
-            <QueryClientProvider>
+        <ErrorBoundary>
+            <QueryProvider>
                 <Hydrate state={pageProps.dehydratedState}>
                     <Intl>
                         <Component {...pageProps} />
                     </Intl>
                     <ReactQueryDevtools initialIsOpen={false} />
                 </Hydrate>
-            </QueryClientProvider>
-        </>
+            </QueryProvider>
+        </ErrorBoundary>
     );
 }
 

@@ -1,1 +1,3 @@
-export { languages } from './index.cjs';
+import { defaultLocale, languages } from './lang.mjs';
+
+export { defaultLocale, languages };

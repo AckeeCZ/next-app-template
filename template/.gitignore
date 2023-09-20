@@ -37,3 +37,7 @@ yarn-error.log*
 
 # Sentry
 .sentryclirc
+
+src/modules/api/codegen
+
+!src/translations/*.mock.json
