@@ -1,10 +1,9 @@
 import { withSentryConfig } from '@sentry/nextjs';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-import "./src/env/env.mjs";
+import './src/env/env.mjs';
 
-
-import { languages } from './src/modules/intl/config/index.cjs';
+import { defaultLocale, languages } from './src/modules/intl/config/langs.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -13,11 +12,9 @@ const nextConfig = {
 
     i18n: {
         locales: Object.values(languages),
-        defaultLocale: languages.EN,
+        defaultLocale,
         localeDetection: true,
     },
-
-
 
     // https://dev.to/chromygabor/add-typescript-type-check-to-next-js-2nbb
     webpack(config, options) {
@@ -30,7 +27,6 @@ const nextConfig = {
     },
 
     transpilePackages: ['@workspace/ui'],
-
 };
 
 const sentryWebpackPluginOptions = {

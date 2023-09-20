@@ -1,26 +1,24 @@
-import { IntlProvider } from "react-intl";
+import { IntlProvider } from 'react-intl';
 
-import { useTranslations } from "../hooks/useTranslations";
-import type { GeneralTranslations, StringKeys } from "../types";
+import { createUseTranslations } from '../hooks/useTranslations';
 
 export interface IntlProps {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
-export function createIntl<Translations extends GeneralTranslations>(
-  translations: Translations,
-  defaultLocale: StringKeys<Translations>,
+export function createIntl<UseTranslations extends ReturnType<typeof createUseTranslations>>(
+    useTranslations: UseTranslations,
 ) {
-  const Intl = ({ children }: IntlProps) => {
-    const [lang, messages] = useTranslations(translations, defaultLocale);
+    const Intl = ({ children }: IntlProps) => {
+        const [lang, messages] = useTranslations();
 
-    return (
-      // @ts-expect-error
-      <IntlProvider locale={lang} messages={messages}>
-        {children}
-      </IntlProvider>
-    );
-  };
+        return (
+            // @ts-expect-error
+            <IntlProvider locale={lang} messages={messages}>
+                {children}
+            </IntlProvider>
+        );
+    };
 
-  return Intl;
+    return Intl;
 }
