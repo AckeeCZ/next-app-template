@@ -52,6 +52,8 @@ const config = {
 
         '@tanstack/query/exhaustive-deps': 'error',
         '@tanstack/query/prefer-query-object-syntax': 'error',
+
+        'turbo/no-undeclared-env-vars': 'off',
     },
 };
 
