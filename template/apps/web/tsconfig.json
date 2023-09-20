@@ -1,16 +1,7 @@
 {
-    "extends": "@workspace/tsconfig/base.json",
+    "extends": "@workspace/tsconfig/nextjs.json",
     "compilerOptions": {
         "baseUrl": ".",
-        "paths": {
-            "~*": ["./src/*"],
-            "~public/*": ["./public/*"]
-        },
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
         "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
     },
     "exclude": ["node_modules"],
