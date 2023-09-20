@@ -1,0 +1,15 @@
+{
+  "name": "@workspace/logger",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "types": "index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@sentry/nextjs": "7.53.1",
+    "loglevel": "~1.8.1"
+  }
+}
