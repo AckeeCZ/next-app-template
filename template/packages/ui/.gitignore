@@ -1,0 +1,11 @@
+tsconfig.tsbuildinfo
+
+*.log 
+
+dist
+
+.turbo
+
+.next
+
+storybook-static
