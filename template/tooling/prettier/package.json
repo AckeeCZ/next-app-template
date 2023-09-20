@@ -3,18 +3,15 @@
   "private": true,
   "version": "0.1.0",
   "main": "index.mjs",
+  "type": "module",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ackee/prettier-config": "^1.1.0"
+    "@ackee/prettier-config": "^1.1.0",
+    "@workspace/tsconfig": "*"
   },
-  "devDependencies": {
-    "@workspace/tsconfig": "*",
-    "typescript": "^5.2.2"
-  },
-
   "prettier": "@workspace/prettier-config"
 }

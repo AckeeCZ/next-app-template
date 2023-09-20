@@ -6,19 +6,15 @@
         "lint": "turbo run lint",
         "format": "turbo run format"
     },
-    "devDependencies": {
-        "@workspace/prettier-config": "*",
-        "turbo": "^1.10.14"
-    },
     "workspaces": [
         "apps/*",
         "packages/*",
         "tooling/*"
     ],
     "dependencies": {
-        "prettier": "^3.0.3",
         "turbo": "^1.10.14",
-        "typescript": "^5.2.2",
+        "@workspace/prettier-config": "*",
+        "@workspace/tsconfig": "*",
         "@manypkg/cli": "^0.21.0"
     },
     "prettier": "@workspace/prettier-config"

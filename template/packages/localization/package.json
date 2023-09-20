@@ -13,10 +13,11 @@
     },
     "dependencies": {
         "@lokse/plugin-prettier": "^2.3.1",
-        "lokse": "2.3.1",
-        "react-intl": "6.4.6"
+        "lokse": "^2.3.1",
+        "react-intl": "^6.4.7"
     },
     "resolutions": {
-        "ts-node": "10.9.1"
+        "ts-node": "^10.9.1",
+        "prettier": "^3.0.3"
     }
 }

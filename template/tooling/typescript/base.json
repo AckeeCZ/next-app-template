@@ -13,7 +13,6 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "jsx": "preserve",

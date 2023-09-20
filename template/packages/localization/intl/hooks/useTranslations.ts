@@ -1,5 +1,5 @@
 import type { CreateTranslations } from '../types';
-import { CreateUseLang } from './useLang';
+import type { CreateUseLang } from './useLang';
 
 export const createUseTranslations = <
     Lang extends string,
@@ -16,3 +16,9 @@ export const createUseTranslations = <
         return [lang, messages] as const;
     };
 };
+
+export type CreateUseTranslations<
+    Lang extends string = string,
+    Translations extends CreateTranslations<Lang> = CreateTranslations<Lang>,
+    UseLang extends CreateUseLang<Lang> = CreateUseLang<Lang>,
+> = ReturnType<typeof createUseTranslations<Lang, Translations, UseLang>>;

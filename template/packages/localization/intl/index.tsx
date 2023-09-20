@@ -1,7 +1,7 @@
 import { createIntl } from './components/Intl';
 import { createUseLang } from './hooks/useLang';
 import { createUseTranslations } from './hooks/useTranslations';
-import { createIsMessageKey, CreateTranslations, type StringKeys } from './types';
+import { createIsMessageKey, type CreateTranslations, type StringKeys } from './types';
 
 export function createLocalizationModule<
     Lang extends StringKeys<Translations>,

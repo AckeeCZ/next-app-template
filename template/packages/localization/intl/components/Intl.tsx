@@ -1,14 +1,12 @@
 import { IntlProvider } from 'react-intl';
 
-import { createUseTranslations } from '../hooks/useTranslations';
+import type { CreateUseTranslations } from '../hooks/useTranslations';
 
 export interface IntlProps {
     children: React.ReactNode;
 }
 
-export function createIntl<UseTranslations extends ReturnType<typeof createUseTranslations>>(
-    useTranslations: UseTranslations,
-) {
+export function createIntl<UseTranslations extends CreateUseTranslations>(useTranslations: UseTranslations) {
     const Intl = ({ children }: IntlProps) => {
         const [lang, messages] = useTranslations();
 
