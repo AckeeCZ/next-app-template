@@ -6,7 +6,7 @@ const config = {
     importOrder: generateImportOrder([
         ['^(react/(.*)$)|^(react$)|^(react-native(.*)$)', '^(next/(.*)$)|^(next$)', '<THIRD_PARTY_MODULES>'],
         ['^@workspace/(.*)$'],
-        ['^~/'],
+        ['^~(.*)$'],
         ['^[../]', '^[./]'],
     ]),
 };

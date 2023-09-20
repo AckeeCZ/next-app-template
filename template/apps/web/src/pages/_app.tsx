@@ -1,17 +1,20 @@
 import type { AppProps } from 'next/app';
 import { Hydrate } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { buildEnv } from '~constants';
-import { QueryProvider } from '~modules/api/components';
-import { Intl } from '~modules/intl';
 
 import { ErrorBoundary } from '@workspace/errors';
 import { initLogger } from '@workspace/logger';
 
+import { buildEnv } from '~constants';
+import { QueryProvider } from '~modules/api/components';
+import { Intl } from '~modules/intl';
+
 import 'normalize.css';
 import 'reset.css';
 
-initLogger(buildEnv === 'development');
+initLogger({
+    outputToConsole: buildEnv === 'development',
+});
 
 interface ExtendedAppProps extends AppProps {}
 
