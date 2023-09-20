@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "build": "npx turbo run build",
+        "build": "turbo run build",
         "dev": "turbo run dev --concurrency 15",
         "lint": "turbo run lint",
         "format": "turbo run format"
