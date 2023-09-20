@@ -4,7 +4,8 @@
         "build": "turbo run build",
         "dev": "turbo run dev --concurrency 15",
         "lint": "turbo run lint",
-        "format": "turbo run format"
+        "format": "turbo run format",
+        "dependecy-check": "manypkg check"
     },
     "workspaces": [
         "apps/*",
