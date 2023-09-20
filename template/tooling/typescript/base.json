@@ -16,6 +16,7 @@
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "jsx": "preserve",
+    "verbatimModuleSyntax": true,
     "incremental": true
   },
   "exclude": [
