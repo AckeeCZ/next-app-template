@@ -24,9 +24,11 @@
         "eslint-import-resolver-typescript": "^3.6.0",
         "eslint-plugin-compat": "^4.2.0",
         "eslint-plugin-prettier": "^5.0.0",
-        "@workspace/prettier-config": "*",
-        "@workspace/tsconfig": "*",
         "eslint": "^8.49.0"
+    },
+    "devDependencies": {
+        "@workspace/prettier-config": "*",
+        "@workspace/tsconfig": "*"
     },
     "eslintConfig": {
         "root": true,

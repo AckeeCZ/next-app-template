@@ -17,5 +17,8 @@
         "@workspace/tsconfig": "*",
         "@manypkg/cli": "^0.21.0"
     },
-    "prettier": "@workspace/prettier-config"
+    "prettier": "@workspace/prettier-config",
+    "resolutions": {
+        "prettier": "^3.0.3"
+    }
 }
