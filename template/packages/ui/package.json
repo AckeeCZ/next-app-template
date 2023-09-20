@@ -13,7 +13,7 @@
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx|json|html|css|md)\" --write",
-        "generate-icons": "npx @svgr/cli src/components/Icons/Icons/assets && yarn format && eslint --fix \"src/components/Icons/Icons/**/*.tsx\"",
+        "generate-icons": "@svgr/cli src/components/Icons/Icons/assets && yarn format && eslint --fix \"src/components/Icons/Icons/**/*.tsx\"",
         "chromatic": "source .env.local; npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
     },
     "peerDependencies": {
@@ -21,8 +21,7 @@
         "react": "18.x",
         "react-intl": "6.x"
     },
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "@babel/core": "^7.22.20",
         "@storybook/addon-actions": "^7.4.2",
@@ -49,7 +48,6 @@
         "storybook": "^7.4.2",
         "tsc-alias": "^1.8.6"
     },
-
     "eslintConfig": {
         "root": true,
         "extends": [
