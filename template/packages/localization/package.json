@@ -1,0 +1,23 @@
+{
+    "name": "@workspace/localization",
+    "version": "0.0.0",
+    "private": true,
+    "license": "MIT",
+    "type": "module",
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "react": "18.x",
+        "react-dom": "18.x"
+    },
+    "dependencies": {
+        "@lokse/plugin-prettier": "^2.3.1",
+        "lokse": "^2.3.1",
+        "react-intl": "^6.4.7"
+    },
+    "resolutions": {
+        "ts-node": "^10.9.1",
+        "prettier": "^3.0.3"
+    }
+}

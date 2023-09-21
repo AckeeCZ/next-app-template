@@ -1,0 +1,12 @@
+{
+    "extends": "@workspace/tsconfig/base.json",
+    "include": ["./src/**/*"],
+    "exclude": ["dist", "build", "node_modules"],
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "outDir": "./dist",
+        "noEmit": false,
+        "target": "ESNext",
+        "jsx": "preserve"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "extends": "@workspace/tsconfig/nextjs.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    },
+    "exclude": ["node_modules"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}

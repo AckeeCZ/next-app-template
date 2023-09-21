@@ -1,0 +1,40 @@
+{
+    "name": "@workspace/eslint-config",
+    "version": "0.0.0",
+    "private": true,
+    "license": "MIT",
+    "files": [
+        "./nextjs.js"
+    ],
+    "type": "commonjs",
+    "scripts": {
+        "clean": "rm -rf .turbo node_modules",
+        "lint": "eslint .",
+        "format": "prettier \"**/*.{mjs,ts,md,json}\" --write",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@next/eslint-plugin-next": "^13.4.19",
+        "@typescript-eslint/eslint-plugin": "^6.7.0",
+        "@tanstack/eslint-plugin-query": "^4.34.1",
+        "eslint-config-turbo": "^1.10.13",
+        "@typescript-eslint/parser": "^6.7.0",
+        "eslint-config-next": "^13.4.19",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-import-resolver-typescript": "^3.6.0",
+        "eslint-plugin-compat": "^4.2.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "eslint": "^8.49.0"
+    },
+    "devDependencies": {
+        "@workspace/prettier-config": "*",
+        "@workspace/tsconfig": "*"
+    },
+    "eslintConfig": {
+        "root": true,
+        "extends": [
+            "./nextjs.js"
+        ]
+    },
+    "prettier": "@workspace/prettier-config"
+}
