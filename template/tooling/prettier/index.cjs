@@ -1,6 +1,6 @@
-import { config as ackeeConfig, generateImportOrder } from '@ackee/prettier-config';
+const { config: ackeeConfig, generateImportOrder } =  require('@ackee/prettier-config');
 
-/** @type {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} */
+/** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig} */
 const config = {
     ...ackeeConfig,
     importOrder: generateImportOrder([
@@ -10,4 +10,5 @@ const config = {
         ['^[../]', '^[./]'],
     ]),
 };
-export default config;
+
+module.exports = config;
