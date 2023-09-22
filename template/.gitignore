@@ -48,3 +48,6 @@ apps/web/src/modules/api/codegen
 .turbo
 
 node_modules
+
+.yalc
+yalc.lock

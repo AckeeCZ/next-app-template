@@ -9,7 +9,8 @@
         "format": "prettier \"**/*.{mjs,md,json}\" --write"
     },
     "dependencies": {
-        "@ackee/prettier-config": "^1.1.2"
+        "@ackee/prettier-config": "^1.1.2",
+        "@ianvs/prettier-plugin-sort-imports": "^4.1.0"
     },
     "prettier": "./index.cjs"
 }

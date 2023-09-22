@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@ackee/browserslist-config/-/browserslist-config-3.0.0.tgz#054203f4f1196093c9ecb7b694cdbd1215f3678a"
   integrity sha512-K1mR2Me/AnoT09TJy1CPZijIuxAeQ+J35+NCDPy9vLgdWLj/t6u9++KMNy3esV2HK7JKLtHzLTjTgROHlndrwg==
 
-"@ackee/prettier-config@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ackee/prettier-config/-/prettier-config-1.1.0.tgz#18df8d2ac2a6c251fd26ada8efb0a205c8697bf2"
-  integrity sha512-3cBJu5RShps35WBdqC59/W69qwUBfCnaJtC955YTUBQZMr6gs0j57eD20CSwu7hcuma/nXavdKwOJ6Q15oxABw==
+"@ackee/prettier-config@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@ackee/prettier-config/-/prettier-config-1.1.2.tgz#e2a27fa8e7f255c79ea68d51c3dd1c599630f918"
+  integrity sha512-/04wTA5HJzJvf/7x8Zl72w+43QDgO/J16USuJ8xiaxbRQAfkS/5OpPfspXPVbnP5IgGCHBvQ0R01qbnBNs4LQQ==
   dependencies:
     "@ianvs/prettier-plugin-sort-imports" "^4.1.0"
     prettier "^3.0.3"

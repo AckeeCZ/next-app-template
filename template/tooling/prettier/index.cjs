@@ -1,4 +1,4 @@
-const { config: ackeeConfig, generateImportOrder } =  require('@ackee/prettier-config');
+const { config: ackeeConfig, generateImportOrder } = require('@ackee/prettier-config');
 
 /** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig} */
 const config = {
