@@ -18,6 +18,6 @@ export const Primary: Story = {
 
 export const Disabled: Story = {
     args: {
-        disabled: true
-    }
-}
+        disabled: true,
+    },
+};
