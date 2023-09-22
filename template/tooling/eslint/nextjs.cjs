@@ -15,6 +15,15 @@ const config = {
          *  Rules override needed until we include them into ackee-eslint-config
          */
         'react/react-in-jsx-scope': 'off',
+        'react/self-closing-comp': ['warn'],
+        'react/jsx-curly-brace-presence': [
+            'warn',
+            {
+                props: 'never',
+                children: 'never',
+                propElementValues: 'always',
+            },
+        ],
         /**
          *  Override core rules with their typesript version
          *  https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#i-am-using-a-rule-from-eslint-core-and-it-doesnt-work-correctly-with-typescript-code

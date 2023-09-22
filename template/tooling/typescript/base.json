@@ -1,29 +1,24 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Base",
-  "compilerOptions": {
-    "target": "es2015",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
-    "jsx": "preserve",
-    "verbatimModuleSyntax": true,
-    "incremental": true
-  },
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    ".next",
-    ".expo"
-  ]
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Base",
+    "compilerOptions": {
+        "target": "es2015",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": false,
+        "jsx": "preserve",
+        "verbatimModuleSyntax": true,
+        "incremental": true,
+        "types": ["@total-typescript/ts-reset"]
+    },
+    "exclude": ["node_modules", "build", "dist", ".next", ".expo"]
 }

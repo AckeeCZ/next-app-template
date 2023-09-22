@@ -1,4 +1,5 @@
 import type { ValuesOf } from '@workspace/ts-utils';
+
 import { translations } from '~translations';
 
 import type { languages } from '../config';

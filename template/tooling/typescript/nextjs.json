@@ -1,38 +1,25 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Next.js",
-  "extends": "./base.json",
-  "plugins": [
-    {
-      "name": "next"
-    }
-  ],
-  "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "baseUrl": "src",
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Next.js",
+    "extends": "./base.json",
     "plugins": [
-      {
-        "name": "next"
-      }
+        {
+            "name": "next"
+        }
     ],
-    "paths": {
-      "~*": [
-        "./src/*"
-      ],
-      "~public/*": [
-        "./public/*"
-      ]
-    }
-  },
-  "include": [
-    "src",
-    "next-env.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "baseUrl": "src",
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "paths": {
+            "~*": ["./src/*"],
+            "~public/*": ["./public/*"]
+        }
+    },
+    "include": ["src", "next-env.d.ts"],
+    "exclude": ["node_modules"]
 }

@@ -1,1 +1,0 @@
-"@total-typescript/ts-reset";

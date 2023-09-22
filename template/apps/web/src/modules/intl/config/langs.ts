@@ -1,1 +1,1 @@
-export * from './langs.mjs';
+export * from './langs.cjs';

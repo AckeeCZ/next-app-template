@@ -7,6 +7,9 @@
     "publishConfig": {
         "access": "public"
     },
+    "scripts": {
+        "format": "prettier \"./{intl,lokse}/**/*.{mjs,cjs,ts,js,tsx,html,css,md}\" --write"
+    },
     "peerDependencies": {
         "react": "18.x",
         "react-dom": "18.x"
@@ -16,8 +19,11 @@
         "lokse": "^2.3.1",
         "react-intl": "^6.4.7"
     },
+    "devDependencies": {
+        "@workspace/prettier-config": "*"
+    },
     "resolutions": {
-        "ts-node": "^10.9.1",
-        "prettier": "^3.0.3"
-    }
+        "ts-node": "^10.9.1"
+    },
+    "prettier": "@workspace/prettier-config"
 }

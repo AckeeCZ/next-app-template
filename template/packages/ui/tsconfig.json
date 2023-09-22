@@ -7,6 +7,7 @@
         "outDir": "./dist",
         "noEmit": false,
         "target": "ESNext",
-        "jsx": "preserve"
+        "jsx": "preserve",
+        "declaration": true
     }
 }

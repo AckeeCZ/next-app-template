@@ -3,7 +3,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 import './src/env/env.mjs';
 
-import { defaultLocale, languages } from './src/modules/intl/config/langs.mjs';
+import { defaultLocale, languages } from './src/modules/intl/config/langs.cjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
