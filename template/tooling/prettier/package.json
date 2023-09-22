@@ -1,18 +1,16 @@
 {
-  "name": "@workspace/prettier-config",
-  "private": true,
-  "version": "0.1.0",
-  "main": "index.mjs",
-  "type": "module",
-  "scripts": {
-    "clean": "rm -rf .turbo node_modules",
-    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "prettier": "^3.0.3",
-    "@ackee/prettier-config": "^1.1.0",
-    "@workspace/tsconfig": "*"
-  },
-  "prettier": "@workspace/prettier-config"
+    "name": "@workspace/prettier-config",
+    "private": true,
+    "version": "0.1.0",
+    "main": "index.mjs",
+    "type": "module",
+    "scripts": {
+        "clean": "rm -rf .turbo node_modules",
+        "format": "prettier \"**/*.{mjs,md,json}\" --write"
+    },
+    "dependencies": {
+        "@ackee/prettier-config": "^1.1.0",
+        "@workspace/tsconfig": "*"
+    },
+    "prettier": "./index.mjs"
 }

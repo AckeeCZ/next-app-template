@@ -1,6 +1,6 @@
-import { translations } from '~translations';
-
 import { createLocalizationModule, type FormattedMessageProps } from '@workspace/localization/intl';
+
+import { translations } from '~translations';
 
 import type { Language, Translations } from '../types';
 import { defaultLocale } from './langs';
