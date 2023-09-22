@@ -67,7 +67,7 @@
     "eslintConfig": {
         "root": true,
         "extends": [
-            "@workspace/eslint-config/nextjs"
+            "@workspace/eslint-config/nextjs.cjs"
         ]
     },
     "prettier": "@workspace/prettier-config",

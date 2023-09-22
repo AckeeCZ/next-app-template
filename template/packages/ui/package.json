@@ -49,7 +49,7 @@
     "eslintConfig": {
         "root": true,
         "extends": [
-            "@workspace/eslint-config/nextjs",
+            "@workspace/eslint-config/nextjs.cjs",
             "plugin:storybook/recommended"
         ],
         "parser": "@typescript-eslint/parser"
