@@ -2,7 +2,6 @@ const { createLokseConfig } = require('../../packages/localization/lokse/index.c
 
 const { languages } = require('./src/modules/intl/config/langs.cjs');
 
-// FIXME: test yarn lokse
 module.exports = createLokseConfig({
     sheets: [],
     languages: Object.values(languages),
