@@ -5,5 +5,12 @@
     "publishConfig": {
         "access": "public"
     },
-    "main": "index.ts"
+    "main": "index.ts",
+    "scripts": {
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@workspace/prettier-config": "*"
+    },
+    "prettier": "@workspace/prettier-config"
 }

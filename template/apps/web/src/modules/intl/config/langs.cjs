@@ -4,4 +4,4 @@ const languages = Object.freeze({
 
 const defaultLocale = languages.EN;
 
-module.exports = {languages, defaultLocale};
+module.exports = { languages, defaultLocale };

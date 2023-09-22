@@ -9,8 +9,7 @@
         "format": "prettier \"**/*.{mjs,md,json}\" --write"
     },
     "dependencies": {
-        "@ackee/prettier-config": "^1.1.0",
-        "@workspace/tsconfig": "*"
+        "@ackee/prettier-config": "^1.1.0"
     },
     "prettier": "./index.mjs"
 }

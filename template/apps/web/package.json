@@ -18,7 +18,7 @@
         "cir-dep": "npx skott@0.28.4 --cwd=./src --displayMode=raw --showCircularDependencies --trackTypeOnlyDependencies=false --manifest=../package.json --tsconfig=../tsconfig.json --incremental=false",
         "cir-dep:options": "npx skott@0.28.4 --help",
         "test": "jest",
-        "format": "prettier --ignore-path .gitignore \"./src/**/*.{ts,js,tsx,html,css,md}\" --write",
+        "format": "prettier --ignore-path .gitignore \"./**/*.{cjs,mjs,json,ts,js,tsx,html,css,md}\" --write",
         "ci-test": "jest --ci",
         "ci-lint": "yarn lint",
         "ci-cir-dep": "yarn cir-dep",

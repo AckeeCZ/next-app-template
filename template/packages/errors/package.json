@@ -5,9 +5,14 @@
         "@sentry/nextjs": "7.x"
     },
     "devDependencies": {
-        "@sentry/nextjs": "^7.64.0"
+        "@sentry/nextjs": "^7.64.0",
+        "@workspace/prettier-config": "*"
     },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "scripts": {
+        "format": "prettier --write ."
+    },
+    "prettier": "@workspace/prettier-config"
 }

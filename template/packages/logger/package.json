@@ -11,5 +11,12 @@
     "dependencies": {
         "@sentry/nextjs": "^7.69.0",
         "loglevel": "^1.8.1"
-    }
+    },
+    "scripts": {
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@workspace/prettier-config": "*"
+    },
+    "prettier": "@workspace/prettier-config"
 }

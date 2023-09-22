@@ -12,7 +12,7 @@
         "lint": "eslint \"**/*.{ts,tsx}*\"",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx|json|html|css|md)\" --write",
+        "format": "prettier --ignore-path .gitignore \"**/*.{cjs,mjs,ts,js,tsx,json,html,css,md}\" --write",
         "generate-icons": "@svgr/cli src/components/Icons/Icons/assets && yarn format && eslint --fix \"src/components/Icons/Icons/**/*.tsx\"",
         "chromatic": "source .env.local; npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
     },

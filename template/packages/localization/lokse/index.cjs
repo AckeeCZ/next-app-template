@@ -5,7 +5,7 @@
  * @param partialConfig {Partial<LokseConfig>}
  * @returns {LokseConfig}
  */
-const createLokseConfig = (partialConfig) => {
+const createLokseConfig = partialConfig => {
     return {
         sheetId: '',
         dir: 'src/translations',
@@ -14,6 +14,6 @@ const createLokseConfig = (partialConfig) => {
         splitTranslations: true,
         ...partialConfig,
     };
-}
+};
 
-module.exports = {createLokseConfig};
+module.exports = { createLokseConfig };
