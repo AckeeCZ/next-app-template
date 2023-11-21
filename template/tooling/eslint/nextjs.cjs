@@ -31,7 +31,7 @@ const config = {
         'no-use-before-define': 'off',
         '@typescript-eslint/no-use-before-define': 'warn',
         'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-unused-vars': 'error',
         'padding-line-between-statements': [
             'warn',
             {

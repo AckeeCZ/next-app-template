@@ -15,10 +15,20 @@
         "isolatedModules": true,
         "emitDecoratorMetadata": false,
         "experimentalDecorators": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "jsx": "preserve",
         "verbatimModuleSyntax": true,
         "incremental": true,
-        "types": ["@total-typescript/ts-reset"]
+        "types": [
+            "@total-typescript/ts-reset"
+        ]
     },
-    "exclude": ["node_modules", "build", "dist", ".next", ".expo"]
+    "exclude": [
+        "node_modules",
+        "build",
+        "dist",
+        ".next",
+        ".expo"
+    ]
 }

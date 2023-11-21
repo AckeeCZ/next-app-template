@@ -4,12 +4,12 @@
     "private": true,
     "license": "MIT",
     "files": [
-        "./nextjs.js"
+        "./nextjs.cjs"
     ],
     "type": "commonjs",
     "scripts": {
         "clean": "rm -rf .turbo node_modules",
-        "lint": "eslint .",
+        "lint": "eslint",
         "format": "prettier \"**/*.{cjs,mjs,ts,md,json}\" --write",
         "typecheck": "tsc --noEmit"
     },
@@ -33,7 +33,7 @@
     "eslintConfig": {
         "root": true,
         "extends": [
-            "./nextjs.js"
+            "./nextjs.cjs"
         ]
     },
     "prettier": "@workspace/prettier-config"
