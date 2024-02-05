@@ -28,12 +28,15 @@ function translateInnerSchemaErrors(def: ZodTypeAny, errors: any, utils: Transla
     const unwrappedDef = unwrapPossibleZodEffectsDef(def);
 
     if (isObjectDef(unwrappedDef)) {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         return translateObjectErrors(unwrappedDef, errors, utils);
     }
     if (isRecordDef(unwrappedDef)) {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         return translateRecordErrors(unwrappedDef, errors, utils);
     }
     if (isArrayDef(unwrappedDef)) {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         return translateArrayErrors(unwrappedDef, errors, utils);
     }
 
