@@ -1,10 +1,9 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { FieldValues, ResolverOptions, ResolverResult } from 'react-hook-form';
-import { useIntl } from 'react-intl';
-import { ZodObject } from 'zod';
 
-import { isMessageKey, type MessageKey } from '~modules/intl';
+import type { NestedPossibleZodEffect } from '../types';
+import { useTranslateErrors, type AcceptedZodType } from './useTranslateErrors';
 
 export type LocalizedZodResolver = <TFieldValues extends FieldValues, TContext>(
     values: TFieldValues,
@@ -15,35 +14,23 @@ export type LocalizedZodResolver = <TFieldValues extends FieldValues, TContext>(
 /**
  * Extend the zodResolver with the ability to translate the error messages.
  */
-export function useLocalizedResolver<Schema extends ZodObject<any, any>>(
+export function useLocalizedResolver<Schema extends NestedPossibleZodEffect<AcceptedZodType>>(
     schema: Schema,
 ): ReturnType<typeof zodResolver> {
-    const { formatMessage } = useIntl();
-
-    const schemaResolver = zodResolver(schema);
+    const schemaResolver = useMemo(() => zodResolver(schema), [schema]);
+    const translateErrors = useTranslateErrors(schema);
 
     return useCallback<LocalizedZodResolver>(
         async (values, context, options) => {
             const result = await schemaResolver(values, context, options);
 
-            const translatedErrors = Object.entries(result.errors).map(([key, value]) => {
-                if (value && 'message' in value && isMessageKey(value.message as string)) {
-                    return [
-                        key,
-                        {
-                            ...value,
-                            message: formatMessage({ id: value.message as MessageKey }),
-                        },
-                    ];
-                }
+            const translatedErrors = translateErrors(result.errors);
 
-                return [key, value];
-            });
-
-            result.errors = Object.fromEntries(translatedErrors);
-
-            return result;
+            return {
+                ...result,
+                errors: translatedErrors,
+            };
         },
-        [schemaResolver, formatMessage],
+        [schemaResolver, translateErrors],
     );
 }
