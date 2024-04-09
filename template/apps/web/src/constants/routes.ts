@@ -1,13 +1,13 @@
-import type { ValuesOf } from '@workspace/ts-utils';
+import type { ValuesOf } from '@workspace/common/types';
 
 export const routes = {
-    home: '/',
+    login: '/login',
 } as const satisfies Record<string, string>;
 
 export type Route = ValuesOf<typeof routes>;
 
 export const authRoutes = {
-    foo: '/auth-route',
-} as const satisfies Record<string, string>;
+    profile: '/profile',
+};
 
 export type AuthRoute = ValuesOf<typeof authRoutes>;

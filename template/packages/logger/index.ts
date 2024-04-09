@@ -3,7 +3,7 @@ import { debug, disableAll, info, levels, error as loglevelError, setLevel, trac
 
 export function initLogger({ outputToConsole }: { outputToConsole: boolean }) {
     if (outputToConsole) {
-        setLevel(levels.DEBUG);
+        setLevel(levels.TRACE);
     } else {
         disableAll();
     }

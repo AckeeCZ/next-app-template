@@ -1,14 +1,20 @@
+import path from 'path';
 import { withSentryConfig } from '@sentry/nextjs';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-import './src/env/env.mjs';
-
 import { defaultLocale, languages } from './src/modules/intl/config/langs.cjs';
+
+import '@workspace/env/env.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+
+    output: 'standalone',
+    experimental: {
+        outputFileTracingRoot: path.join(import.meta.dirname, '../../'),
+    },
 
     i18n: {
         locales: Object.values(languages),
@@ -20,7 +26,13 @@ const nextConfig = {
     webpack(config, options) {
         // Do not run type checking twice:
         if (options.dev && options.isServer) {
-            config.plugins.push(new ForkTsCheckerWebpackPlugin());
+            config.plugins.push(
+                new ForkTsCheckerWebpackPlugin({
+                    typescript: {
+                        memoryLimit: 4096,
+                    },
+                }),
+            );
         }
 
         return config;

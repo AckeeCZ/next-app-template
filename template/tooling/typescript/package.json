@@ -1,20 +1,15 @@
 {
-    "name": "@workspace/tsconfig",
-    "private": true,
-    "version": "0.0.0",
-    "files": [
-        "base.json",
-        "nextjs.json"
-    ],
-    "scripts": {
-        "format": "prettier \"./*.json\" --write"
+    "name": "@tooling/typescript",
+    "version": "0.0.1",
+    "exports": {
+        "./base": "./base.json",
+        "./nextjs": "./nextjs.json",
+        "./node": "./node.json"
     },
     "dependencies": {
-        "typescript": "^5.2.2",
-        "@total-typescript/ts-reset": "^0.5.1"
-    },
-    "devDependencies": {
-        "@workspace/prettier-config": "*"
-    },
-    "prettier": "@workspace/prettier-config"
+        "@total-typescript/ts-reset": "^0.5.1",
+        "@types/jest": "^29.5.12",
+        "@types/node": "20.12.7",
+        "typescript": "^5.4.4"
+    }
 }

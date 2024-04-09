@@ -2,7 +2,7 @@
     "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Base",
     "compilerOptions": {
-        "target": "es2015",
+        "target": "ESNext",
         "allowJs": true,
         "skipLibCheck": true,
         "strict": true,
@@ -10,15 +10,17 @@
         "noEmit": true,
         "esModuleInterop": true,
         "module": "ESNext",
-        "moduleResolution": "Node",
         "resolveJsonModule": true,
+        "moduleDetection": "force",
         "isolatedModules": true,
         "emitDecoratorMetadata": false,
         "experimentalDecorators": false,
-        "jsx": "preserve",
         "verbatimModuleSyntax": true,
         "incremental": true,
-        "types": ["@total-typescript/ts-reset"]
+        "typeRoots": ["../../node_modules/@types", "../../node_modules"],
+        "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+        "types": ["@total-typescript/ts-reset", "jest", "node", "vitest/globals"],
+        "baseUrl": "."
     },
-    "exclude": ["node_modules", "build", "dist", ".next", ".expo"]
+    "exclude": ["node_modules", "build", "dist", ".turbo", ".next", ".vscode", ".yarn", ".husky"]
 }

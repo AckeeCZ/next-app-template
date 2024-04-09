@@ -1,16 +1,22 @@
 {
-    "name": "@workspace/prettier-config",
-    "private": true,
-    "version": "0.1.0",
-    "main": "index.cjs",
+    "name": "@tooling/prettier",
+    "version": "0.0.1",
     "type": "commonjs",
+    "bin": {
+        "prettier-format": "./bin/cli.js"
+    },
+    "exports": {
+        "./config": "./config/index.js"
+    },
     "scripts": {
-        "clean": "rm -rf .turbo node_modules",
-        "format": "prettier \"**/*.{mjs,md,json}\" --write"
+        "format": "prettier-format"
     },
     "dependencies": {
-        "@ackee/prettier-config": "^1.1.2",
-        "@ianvs/prettier-plugin-sort-imports": "^4.1.0"
+        "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+        "prettier": "^3.2.5"
     },
-    "prettier": "./index.cjs"
+    "devDependencies": {
+        "@tooling/typescript": "workspace:*"
+    },
+    "prettier": "./config/index.js"
 }

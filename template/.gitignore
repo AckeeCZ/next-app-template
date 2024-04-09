@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-node_modules
+**/node_modules
 .pnp
 .pnp.js
 
@@ -9,7 +9,7 @@ node_modules
 coverage
 
 # storybook
-dist/
+**/dist/
 
 # next.js
 .next
@@ -17,7 +17,7 @@ out
 build-storybook.log
 
 # production
-build
+**/build
 
 # misc
 .DS_Store
@@ -41,13 +41,20 @@ apps/web/.env.local
 # Sentry
 .sentryclirc
 
-apps/web/src/modules/api/codegen
-
 !src/translations/*.mock.json
 
 .turbo
 
-node_modules
+# webstorm
+.idea
 
 .yalc
 yalc.lock
+
+# yarn 
+.yarn
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+
+.cache

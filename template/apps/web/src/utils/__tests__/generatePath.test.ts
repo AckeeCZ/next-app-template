@@ -1,12 +1,10 @@
-import { createGeneratePath } from '../generatePath';
-
-const generatePath = createGeneratePath();
+import { generatePath } from '../generatePath';
 
 describe('generatePath', () => {
     it('generatesPath with one variable', () => {
-        const path = generatePath('/page/[id]', { id: '12' });
+        const path = generatePath('/[doId]', { doId: '12' });
 
-        expect(path).toEqual('/page/12');
+        expect(path).toEqual('/12');
     });
 
     it('generatesPath with multiple variables', () => {

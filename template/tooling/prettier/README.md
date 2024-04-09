@@ -1,1 +1,0 @@
--   The `@ianvs/prettier-plugin-sort-imports` from `@ackee/prettier-config` must have been added directly here, else the `@lokse-/prettier-plugin` would fail to find the `@ianvs/prettier-plugin-sort-imports`.

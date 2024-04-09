@@ -1,34 +1,34 @@
 import type { AppProps } from 'next/app';
-import { Hydrate } from '@tanstack/react-query';
+import { HydrationBoundary } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
+import { env } from '@workspace/env';
 import { ErrorBoundary } from '@workspace/errors';
 import { initLogger } from '@workspace/logger';
 
-import { buildEnv } from '~constants';
-import { QueryProvider } from '~modules/api/components';
+import { AppQueryProvider } from '~modules/api/components';
 import { Intl } from '~modules/intl';
 
 import 'normalize.css';
 import 'reset.css';
 
 initLogger({
-    outputToConsole: buildEnv === 'development',
+    outputToConsole: env.NEXT_PUBLIC_BUILD_ENV === 'development',
 });
 
-interface ExtendedAppProps extends AppProps {}
+export interface ExtendedAppProps extends AppProps {}
 
 function App({ Component, pageProps }: ExtendedAppProps) {
     return (
         <ErrorBoundary>
-            <QueryProvider>
-                <Hydrate state={pageProps.dehydratedState}>
+            <AppQueryProvider>
+                <HydrationBoundary state={pageProps.dehydratedState}>
                     <Intl>
                         <Component {...pageProps} />
                     </Intl>
                     <ReactQueryDevtools initialIsOpen={false} />
-                </Hydrate>
-            </QueryProvider>
+                </HydrationBoundary>
+            </AppQueryProvider>
         </ErrorBoundary>
     );
 }

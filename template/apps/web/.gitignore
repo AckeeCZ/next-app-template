@@ -41,8 +41,6 @@ apps/web/.env.local
 # Sentry
 .sentryclirc
 
-apps/web/src/modules/api/codegen
-
 !src/translations/*.mock.json
 
 .turbo

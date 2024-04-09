@@ -1,8 +1,7 @@
 {
-    "extends": "@workspace/tsconfig/base.json",
+    "extends": "@tooling/typescript/node",
     "compilerOptions": {
-        "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+        "baseUrl": ".",
     },
-    "include": ["."],
-    "exclude": ["node_modules"]
+    "include": ["./**/*.js", "config/nextjs.js", "bin/cli.js", "config/base.js"],
 }

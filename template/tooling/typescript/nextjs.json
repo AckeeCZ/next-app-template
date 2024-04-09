@@ -8,8 +8,11 @@
         }
     ],
     "compilerOptions": {
-        "lib": ["dom", "dom.iterable", "esnext"],
+        "lib": ["dom", "dom.iterable", "esnext", "ESNext.Promise"],
         "baseUrl": "src",
+        "jsx": "preserve",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
         "plugins": [
             {
                 "name": "next"
@@ -20,6 +23,5 @@
             "~public/*": ["./public/*"]
         }
     },
-    "include": ["src", "next-env.d.ts"],
-    "exclude": ["node_modules"]
+    "include": ["src", "next-env.d.ts"]
 }

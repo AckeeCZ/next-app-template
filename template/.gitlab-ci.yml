@@ -1,36 +1,44 @@
 default:
-  image: node:20.2.0
+    image: node:20.11.1
 
 variables:
-  ACKEE_VERCEL_API_TOKEN: ""
-  CLIENT_VERCEL_API_TOKEN: ""
+    VERCEL_PROJECT_NAME: 'project-name'
+
+try_build:
+    stage: build
+    only:
+        - merge_requests
+    except:
+        - dev
+        - main
+    before_script:
+        - corepack enable
+        - yarn set version stable
+        - yarn install --immutable
+    script:
+        - yarn test:ci
 
 deploy_development_ackee:
-  stage: deploy
-  only:
-    - development
-  script:
-    - yarn install --frozen-lockfile --global vercel
-    - vercel pull --yes --environment=preview --token=$ACKEE_VERCEL_API_TOKEN
-    - vercel build --token=$ACKEE_VERCEL_API_TOKEN
-    - vercel deploy --prebuilt --token=$ACKEE_VERCEL_API_TOKEN
+    stage: deploy
+    only:
+        - dev
+    before_script:
+        - corepack enable
+        - yarn set version stable
+    script:
+        - yarn dlx -q vercel link --project=$VERCEL_PROJECT_NAME --scope=$ACKEE_VERCEL_SCOPE --yes --token=$ACKEE_VERCEL_API_TOKEN
+        - yarn dlx -q vercel pull --yes --environment=preview --token=$ACKEE_VERCEL_API_TOKEN
+        - yarn dlx -q vercel build --token=$ACKEE_VERCEL_API_TOKEN
+        - yarn dlx -q vercel deploy --prebuilt --token=$ACKEE_VERCEL_API_TOKEN
 
 deploy_stage_ackee:
-  stage: deploy
-  only:
-    - stage
-  script:
-    - yarn install --frozen-lockfile --global vercel
-    - vercel pull --yes --environment=production --token=$ACKEE_VERCEL_API_TOKEN
-    - vercel build --prod --token=$ACKEE_VERCEL_API_TOKEN
-    - vercel deploy --prebuilt --prod --token=$ACKEE_VERCEL_API_TOKEN
-
-deploy_production_client:
-  stage: deploy
-  only:
-    - main
-  script:
-    - yarn install --frozen-lockfile --global vercel
-    - vercel pull --yes --environment=production --token=$CLIENT_VERCEL_API_TOKEN
-    - vercel build --prod --token=$CLIENT_VERCEL_API_TOKEN
-    - vercel deploy --prebuilt --prod --token=$CLIENT_VERCEL_API_TOKEN
+    stage: deploy
+    only:
+        - stage
+    before_script:
+        - corepack enable
+        - yarn set version stable
+    script:
+        - yarn dlx -q vercel pull --yes --environment=production --scope=$ACKEE_VERCEL_SCOPE --token=$ACKEE_VERCEL_API_TOKEN
+        - yarn dlx -q vercel build --prod --token=$ACKEE_VERCEL_API_TOKEN
+        - yarn dlx -q vercel deploy --prebuilt --prod --token=$ACKEE_VERCEL_API_TOKEN
