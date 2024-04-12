@@ -1,33 +1,35 @@
-import type { AuthRoute, Route } from '../constants';
+import type { AuthRoute, Route } from '~constants';
 
-type SplitString<S extends string, D extends string> = string extends S
-    ? string[]
+type Value = string | number;
+
+type SplitString<S extends Value, D extends Value> = Value extends S
+    ? Value[]
     : S extends ''
-    ? []
-    : S extends `${infer T}${D}${infer U}`
-    ? [T, ...SplitString<U, D>]
-    : [S];
+      ? []
+      : S extends `${infer T}${D}${infer U}`
+        ? [T, ...SplitString<U, D>]
+        : [S];
 
-type Variables<S extends string> = SplitString<S, '/'>[number] extends `${infer V}`
+type Variables<S extends Value> = SplitString<S, '/'>[number] extends `${infer V}`
     ? V extends `[${infer T}]`
         ? T
         : never
     : never;
 
-type Params<S extends string> = Variables<S> extends string ? { [key in Variables<S>]: string } : never;
+export type GeneratePathParams<S extends Value> = Variables<S> extends Value ? { [key in Variables<S>]: Value } : never;
 
-export function createGeneratePath<T extends string = string>() {
-    return function generatePath(route: T, params: Params<T>) {
-        const regex = /[[](?<variable>\w+)[\]]/g;
+export function generatePath<T extends AuthRoute | Route, P extends GeneratePathParams<T>>(route: T, params: P) {
+    const regex = /[[](?<variable>\w+)[\]]/g;
 
-        return route.toString().replace(regex, (_, key) => {
-            const variableKey = key as keyof Params<T>;
+    type VarKey = keyof P;
 
-            if (!params[variableKey]) throw Error(`Key ${key} was not provided`);
+    return route.replace(regex, (_, key) => {
+        const variableKey = key as VarKey;
 
-            return params[variableKey];
-        });
-    };
+        if (params[variableKey] === undefined) throw Error(`Key ${key} was not provided`);
+
+        const value = params[variableKey];
+
+        return encodeURIComponent(value);
+    });
 }
-
-export const generatePath = createGeneratePath<AuthRoute | Route>();

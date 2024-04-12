@@ -6,7 +6,21 @@ We are using our skeleton written in Typescript and based on create-next-app =>Â
 
 ## Getting Started
 
-1. Copy `.env.template` to `.env.local` and update it with real values.
+0. Activate package manager & Install dependencies
+   This project uses `yarn@4.x`:
+
+    ```sh
+    # adds required binaries based on packageManager field in package.json
+    corepack enable
+    ```
+
+    then install dependencies by running:
+
+    ```sh
+    yarn
+    ```
+
+1. [Download `env.local` from Passwd](https://ackee.passwd.team/secrets/3vA3iG87ziu3RAchXXUM) and rename it to `.env.local`.
 
     > Be aware that env. variables are validated with predefined zod schema in `src/env/index.mjs`.
     > If you need to add/remove a new env. var., don't forget the update the schema too.
@@ -20,6 +34,13 @@ We are using our skeleton written in Typescript and based on create-next-app =>Â
     Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
     You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+## Envs
+
+-   `dev` & `stage` are deployed to Vercel where are defined corresponding env. vars â€“ [Edit Vercel env vars](https://vercel.com/frontend-ackeecz/efactoring/settings/environment-variables).
+    -   Credentials for Vercel can be found [here](https://ackee.passwd.team/secrets/ndFdjQT50bIsLFintjlU).
+-   Production (`master`) deployment is handled by Arbes. Contact MatÄ›j HolÃ½ for more info.
+-   For local development, you need to provide `.env.local` with those vars placed in the `apps/web`. [Download it from Passwd](https://ackee.passwd.team/secrets/23LeUdfz8TU7h2LklOcR)
 
 ## Localizations
 

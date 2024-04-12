@@ -1,0 +1,17 @@
+{
+    "name": "@workspace/common",
+    "version": "0.0.1",
+    "type": "module",
+    "prettier": "@tooling/prettier/config",
+    "devDependencies": {
+        "@tooling/eslint": "workspace:*",
+        "@tooling/prettier": "workspace:*",
+        "@tooling/skott": "workspace:*",
+        "@tooling/typescript": "workspace:*"
+    },
+    "scripts": {
+        "cir-dep": "find-circular-deps --cwd .",
+        "format": "prettier-format",
+        "lint": "eslint-lint --config eslint.config.js ./**/*.ts"
+    }
+}

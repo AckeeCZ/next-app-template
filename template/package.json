@@ -1,11 +1,20 @@
 {
+    "packageManager": "yarn@4.1.1",
     "private": true,
+    "type": "commonjs",
+    "engines": {
+        "node": "20"
+    },
     "scripts": {
-        "build": "turbo run build",
-        "dev": "turbo run dev --concurrency 15",
-        "lint": "turbo run lint",
-        "format": "turbo run format",
-        "dependecy-check": "manypkg check"
+        "postinstall": "turbo telemetry disable",
+        "build": "turbo run build --parallel",
+        "dev": "turbo run dev --concurrency 100%",
+        "cir-dep": "turbo run cir-dep --parallel",
+        "test:ci": "turbo run test:ci --parallel",
+        "lint": "turbo run lint --parallel",
+        "lint:fix": "turbo run lint --parallel -- --fix --fix-type=directive,problem,suggestion,layout",
+        "format": "turbo run format --parallel",
+        "audit": "yarn npm audit --severity moderate --environment production --all"
     },
     "workspaces": [
         "apps/*",
@@ -13,13 +22,11 @@
         "tooling/*"
     ],
     "dependencies": {
-        "turbo": "^1.10.14",
-        "@workspace/prettier-config": "*",
-        "@workspace/tsconfig": "*",
-        "@manypkg/cli": "^0.21.0"
+        "@tooling/eslint": "workspace:*",
+        "@tooling/prettier": "workspace:*",
+        "@tooling/typescript": "workspace:*",
+        "husky": "^9.0.11",
+        "turbo": "^1.13.2"
     },
-    "prettier": "@workspace/prettier-config",
-    "resolutions": {
-        "prettier": "^3.0.3"
-    }
+    "prettier": "@tooling/prettier/config"
 }

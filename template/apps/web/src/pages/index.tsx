@@ -1,9 +1,7 @@
 import type { NextPage } from 'next';
 
-import { LoginForm } from '~modules/form/components';
-
 const Home: NextPage = () => {
-    return <LoginForm />;
+    return <div>Home page</div>;
 };
 
 export default Home;

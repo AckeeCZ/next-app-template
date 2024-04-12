@@ -24,4 +24,3 @@ export function createLocalizationModule<
 
 export { isFormattedMessageValues } from './types';
 export type { FormattedMessageProps } from './types';
-export * from './utils';

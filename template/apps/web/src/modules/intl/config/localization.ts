@@ -11,5 +11,5 @@ export const { Intl, isMessageKey, useLang, useTranslations } = createLocalizati
 });
 
 export function isFormattedMessageProps(obj: any): obj is FormattedMessageProps {
-    return obj && isMessageKey(obj.id);
+    return obj && typeof obj === 'object' && isMessageKey(obj.id);
 }

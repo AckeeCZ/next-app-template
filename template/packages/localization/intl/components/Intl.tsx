@@ -11,7 +11,6 @@ export function createIntl<UseTranslations extends CreateUseTranslations>(useTra
         const [lang, messages] = useTranslations();
 
         return (
-            // @ts-expect-error
             <IntlProvider locale={lang} messages={messages}>
                 {children}
             </IntlProvider>

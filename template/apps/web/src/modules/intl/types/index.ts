@@ -1,4 +1,4 @@
-import type { ValuesOf } from '@workspace/ts-utils';
+import type { ValuesOf } from '@workspace/common/types';
 
 import { translations } from '~translations';
 

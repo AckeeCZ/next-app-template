@@ -5,8 +5,10 @@
  * - All the rest please place to the `modules/intl`. 🙌
  */
 import type { Language } from '../modules/intl/types';
-import en from './en.mock.json';
+import cs from './all.cs';
+import en from './all.en';
 
 export const translations = {
     en,
-} satisfies Record<Language, Record<string, string>>;
+    cs,
+} as const satisfies Record<Language, Record<string, string>>;
