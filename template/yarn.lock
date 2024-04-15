@@ -1811,6 +1811,7 @@ __metadata:
     "@eslint/eslintrc": "npm:^3.0.2"
     "@tanstack/eslint-plugin-query": "npm:^5.28.11"
     "@tooling/prettier": "workspace:*"
+    "@tooling/staged": "workspace:^"
     "@tooling/typescript": "workspace:*"
     "@types/eslint": "npm:^8.56.7"
     "@types/eslint__eslintrc": "npm:^2.1.1"
@@ -1845,6 +1846,7 @@ __metadata:
   resolution: "@tooling/prettier@workspace:tooling/prettier"
   dependencies:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
+    "@tooling/staged": "workspace:^"
     "@tooling/typescript": "workspace:*"
     prettier: "npm:^3.2.5"
   bin:
@@ -1860,6 +1862,14 @@ __metadata:
     skott: "npm:^0.33.2"
   bin:
     find-circular-deps: ./bin/cli.js
+  languageName: unknown
+  linkType: soft
+
+"@tooling/staged@workspace:^, @tooling/staged@workspace:tooling/staged":
+  version: 0.0.0-use.local
+  resolution: "@tooling/staged@workspace:tooling/staged"
+  dependencies:
+    "@tooling/typescript": "workspace:*"
   languageName: unknown
   linkType: soft
 

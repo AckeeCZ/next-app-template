@@ -7,10 +7,9 @@
         "build": {
             "dotEnv": [".env.local", ".env"],
             "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-            "dependsOn": ["lint", "^build"]
+            "dependsOn": ["cir-dep", "format", "lint", "^build"]
         },
         "lint": {
-            "dependsOn": ["format"],
             "cache": true,
             "outputMode": "full"
         },
@@ -30,6 +29,10 @@
         "//#audit": {
             "dependsOn": [],
             "cache": false
+        },
+        "//#pre-commit": {
+            "dependsOn": [],
+            "cache": true
         }
     }
 }

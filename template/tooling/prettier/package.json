@@ -16,6 +16,7 @@
         "prettier": "^3.2.5"
     },
     "devDependencies": {
+        "@tooling/staged": "workspace:^",
         "@tooling/typescript": "workspace:*"
     },
     "prettier": "./config/index.js"
