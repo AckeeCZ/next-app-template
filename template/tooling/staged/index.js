@@ -2,12 +2,14 @@
 const { execSync } = require('child_process');
 const { resolve } = require('path');
 
+const ROOT = resolve(__dirname, '../..');
+
 function getStagedAndScopedFiles() {
     return execSync('git diff --staged --name-only --diff-filter=AM .')
         .toString()
         .split('\n')
         .filter(file => file.trim().length > 0)
-        .map(file => resolve(process.cwd(), file));
+        .map(file => resolve(ROOT, file));
 }
 
 /**
