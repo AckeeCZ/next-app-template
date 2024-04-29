@@ -1,0 +1,2 @@
+# Keep LF line endings, even on Windows to make it compatible with default Prettier settings
+* text eol=lf

@@ -15,6 +15,6 @@
     "prettier": "@tooling/prettier/config",
     "scripts": {
         "format": "prettier-format --write ./*.ts",
-        "lint": "eslint-lint --config eslint.config.js ./**/*.ts"
+        "lint": "eslint-lint --config eslint.config.js './**/*.ts'"
     }
 }

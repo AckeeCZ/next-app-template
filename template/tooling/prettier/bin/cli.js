@@ -17,7 +17,7 @@ function format(args) {
     console.log('Formatting files with Prettier:');
 
     execSync(
-        `${prettierBinPath} --ignore-path ${gitignore} --ignore-unknown --log-level=warn --cache --cache-strategy=content --cache-location=.cache/prettier --no-editorconfig ${args}`,
+        `${prettierBinPath} --ignore-path ${gitignore} --ignore-unknown --log-level=warn --cache --cache-strategy=content --cache-location=.cache/prettier ${args}`,
         {
             encoding: 'utf8',
             stdio: 'inherit',

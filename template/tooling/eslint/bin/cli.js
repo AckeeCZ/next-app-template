@@ -22,10 +22,14 @@ function lint(args) {
     try {
         // TODO: add  --report-unused-disable-directives
         execSync(
-            `ESLINT_USE_FLAT_CONFIG=true ${eslint} --config=${defaultConfig} --no-warn-ignored --cache --cache-strategy=content --cache-location .cache/eslint ${args}`,
+            `${eslint} --config=${defaultConfig} --no-warn-ignored --cache --cache-strategy=content --cache-location .cache/eslint ${args}`,
             {
                 encoding: 'utf8',
                 stdio: 'inherit',
+                env: {
+                    ...process.env,
+                    ESLINT_USE_FLAT_CONFIG: 'true',
+                },
             },
         );
 

@@ -17,6 +17,6 @@
     "scripts": {
         "cir-dep": "find-circular-deps --cwd .",
         "format": "prettier-format",
-        "lint": "eslint-lint --config eslint.config.js ./**/*.{ts,tsx}"
+        "lint": "eslint-lint --config eslint.config.js './**/*.{ts,tsx}'"
     }
 }
