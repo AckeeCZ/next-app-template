@@ -81,7 +81,7 @@ export const nextjs = compat.config({
     extends: ['next/core-web-vitals'],
     parserOptions: {
         babelOptions: {
-            presets: [resolve(import.meta.dirname, '../node_modules/next/babel.js')],
+            presets: [resolve(import.meta.dirname, '../../../node_modules/next/babel.js')],
         },
         ecmaVersion: 'latest',
     },
