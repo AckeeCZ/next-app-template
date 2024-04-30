@@ -79,6 +79,7 @@ export const tanstackQuery = compat.config({
 
 export const nextjs = compat.config({
     extends: ['next/core-web-vitals'],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         babelOptions: {
             presets: [resolve(import.meta.dirname, '../../../node_modules/next/babel.js')],
@@ -175,10 +176,10 @@ export const nextjs = compat.config({
 
         // -----
 
-        'import/no-anonymous-default-export': 'error',
+        'import/no-anonymous-default-export': 'off',
 
         /**
-         * REASON: https://ackee.slack.com/archives/C07BZ9K32/p1536067640000100
+         * REASON: https://ackee.slack.com/archives/C07BZ9K32/®p1536067640000100
          */
         'import/prefer-default-export': 'off',
 
