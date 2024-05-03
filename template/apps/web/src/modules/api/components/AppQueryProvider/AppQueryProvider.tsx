@@ -1,16 +1,17 @@
-import { useMemo, type ReactNode } from 'react';
-import { type QueryClientConfig } from '@tanstack/react-query';
-
-import { QueryProvider } from '@workspace/api';
+import { useState, type ReactNode } from 'react';
+import { HydrationBoundary, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export interface AppQueryProviderProps {
     children: ReactNode;
+    dehydratedState: unknown;
 }
 
-export function AppQueryProvider({ children }: AppQueryProviderProps) {
-    const queryClientConfig = useMemo<QueryClientConfig>(() => {
-        return {};
-    }, []);
+export function AppQueryProvider({ children, dehydratedState }: AppQueryProviderProps) {
+    const [queryClient] = useState(() => new QueryClient({}));
 
-    return <QueryProvider queryClientConfig={queryClientConfig}>{children}</QueryProvider>;
+    return (
+        <QueryClientProvider client={queryClient}>
+            <HydrationBoundary state={dehydratedState}>{children}</HydrationBoundary>
+        </QueryClientProvider>
+    );
 }

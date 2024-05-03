@@ -9,7 +9,9 @@ const args = process.argv.slice(2).join(' ');
 try {
     execSync(`${lokse} ${args}`, { stdio: 'inherit' });
 
-    transformTranslations();
+    if (args.includes('update')) {
+        transformTranslations();
+    }
 } catch (error) {
     console.error(error);
     process.exit(1);
