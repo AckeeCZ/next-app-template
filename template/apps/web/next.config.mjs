@@ -19,7 +19,6 @@ const nextConfig = {
     i18n: {
         locales: Object.values(languages),
         defaultLocale,
-        localeDetection: true,
     },
 
     // https://dev.to/chromygabor/add-typescript-type-check-to-next-js-2nbb
