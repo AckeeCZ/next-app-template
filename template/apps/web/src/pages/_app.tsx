@@ -2,7 +2,6 @@ import 'normalize.css';
 import 'reset.css';
 
 import type { AppProps } from 'next/app';
-import { HydrationBoundary } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { env } from '@workspace/env';
@@ -21,13 +20,11 @@ export interface ExtendedAppProps extends AppProps {}
 function App({ Component, pageProps }: ExtendedAppProps) {
     return (
         <ErrorBoundary>
-            <AppQueryProvider>
-                <HydrationBoundary state={pageProps.dehydratedState}>
-                    <Intl>
-                        <Component {...pageProps} />
-                    </Intl>
-                    <ReactQueryDevtools initialIsOpen={false} />
-                </HydrationBoundary>
+            <AppQueryProvider dehydratedState={pageProps.dehydratedState}>
+                <Intl>
+                    <Component {...pageProps} />
+                </Intl>
+                <ReactQueryDevtools initialIsOpen={false} />
             </AppQueryProvider>
         </ErrorBoundary>
     );

@@ -3,7 +3,7 @@
     "private": true,
     "type": "commonjs",
     "engines": {
-        "node": "20"
+        "node": ">=20.11.1"
     },
     "scripts": {
         "postinstall": "turbo telemetry disable",
