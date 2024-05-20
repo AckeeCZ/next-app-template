@@ -25,7 +25,17 @@ We are using our skeleton written in Typescript and based on create-next-app =>Â
     > Be aware that env. variables are validated with predefined zod schema in `src/env/index.mjs`.
     > If you need to add/remove a new env. var., don't forget the update the schema too.
 
-2. Launch development server:
+2. Set `sheetId` in `template/tooling/lokse/config/index.js` & fetch fresh translations:
+
+    ```sh
+    # Go to the app
+    cd apps/web
+
+    # Fetch fresh translations
+    yarn localize
+    ```
+
+3. Launch development server:
 
     ```sh
     yarn dev
