@@ -30,6 +30,15 @@ const config = {
      * >=5.x
      */
     importOrderTypeScriptVersion: '5.0.0',
+
+    overrides: [
+        {
+            files: ['*.json', '*.jsonc'],
+            options: {
+                trailingComma: 'none',
+            },
+        },
+    ],
 };
 
 module.exports = config;
