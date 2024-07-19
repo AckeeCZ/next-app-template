@@ -13,7 +13,7 @@ try_build:
         - main
     before_script:
         - corepack enable
-        - yarn set version stable
+        - corepack install
         - yarn install --immutable
     script:
         - yarn test:ci
@@ -24,7 +24,7 @@ deploy_development_ackee:
         - dev
     before_script:
         - corepack enable
-        - yarn set version stable
+        - corepack install
     script:
         - yarn dlx -q vercel link --project=$VERCEL_PROJECT_NAME --scope=$ACKEE_VERCEL_SCOPE --yes --token=$ACKEE_VERCEL_API_TOKEN
         - yarn dlx -q vercel pull --yes --environment=preview --token=$ACKEE_VERCEL_API_TOKEN
@@ -37,7 +37,7 @@ deploy_stage_ackee:
         - stage
     before_script:
         - corepack enable
-        - yarn set version stable
+        - corepack install
     script:
         - yarn dlx -q vercel pull --yes --environment=production --scope=$ACKEE_VERCEL_SCOPE --token=$ACKEE_VERCEL_API_TOKEN
         - yarn dlx -q vercel build --prod --token=$ACKEE_VERCEL_API_TOKEN
