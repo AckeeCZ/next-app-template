@@ -11,8 +11,7 @@
         "localize": "lokse update",
         "test": "vitest dev",
         "test:ci": "vitest run",
-        "version": "yarn changelog && code CHANGELOG.md --wait && git add CHANGELOG.md",
-        "changelog": "git fetch origin && gitmoji-changelog",
+        "release": "node ./scripts/release.mjs && git push origin --tags",
         "format": "prettier-format",
         "cir-dep": "find-circular-deps"
     },

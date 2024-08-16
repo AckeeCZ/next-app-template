@@ -87,6 +87,35 @@ yarn generate-icons
 
 It will generate icons into the React/Typescript components ready to use.
 
+## Release
+
+The versioning follows:
+
+-   `major` version - for production releases
+-   `minor` version - for stage releases
+-   `patch` version - hotfixes / minor fixes
+
+The version bumping is happening in `apps/web`:
+
+1. Go to the app
+
+    ```sh
+    cd apps/web
+    ```
+
+2. Make sure you're in `dev` branch. Bump the new version as:
+
+    ```sh
+    yarn release 0.19.0
+    ```
+
+    - This calls `scripts/release.mjs`.
+    - It bumps version in the `package.json`.
+    - Updates changelog (adds commits from last git tag).
+    - Waits for closing the changelog file.
+    - Creates release a commit and git tag.
+    - Calls git push (including tags so other developers can correctly generate the changelog too).
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
