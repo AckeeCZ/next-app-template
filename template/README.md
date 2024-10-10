@@ -47,10 +47,7 @@ We are using our skeleton written in Typescript and based on create-next-app =>�
 
 ## Envs
 
--   `dev` & `stage` are deployed to Vercel where are defined corresponding env. vars – [Edit Vercel env vars](https://vercel.com/frontend-ackeecz/efactoring/settings/environment-variables).
-    -   Credentials for Vercel can be found [here](https://ackee.passwd.team/secrets/ndFdjQT50bIsLFintjlU).
--   Production (`master`) deployment is handled by Arbes. Contact Matěj Holý for more info.
--   For local development, you need to provide `.env.local` with those vars placed in the `apps/web`. [Download it from Passwd](https://ackee.passwd.team/secrets/23LeUdfz8TU7h2LklOcR)
+-   For local development, you need to provide `.env.local` with those vars placed in the `apps/web`. 
 
 ## Localizations
 
