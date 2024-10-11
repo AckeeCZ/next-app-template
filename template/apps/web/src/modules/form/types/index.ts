@@ -1,4 +1,4 @@
-import type { MessageKey } from '~modules/intl';
+import type { MessageKey } from '@workspace/localization';
 
 export * from './nestedPossibleZodEffect';
 

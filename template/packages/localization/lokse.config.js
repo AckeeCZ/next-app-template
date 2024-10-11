@@ -1,6 +1,6 @@
 const { createLokseConfig } = require('@tooling/lokse/config');
 
-const { languages } = require('./src/modules/intl/config/langs.cjs');
+const { languages } = require('./config/langs.cjs');
 
 module.exports = createLokseConfig({
     sheets: ['All'],

@@ -1,28 +1,33 @@
-import { captureException, setExtras } from '@sentry/nextjs';
-import { debug, disableAll, info, levels, error as loglevelError, setLevel, trace, warn } from 'loglevel';
+import { captureException, setExtras } from '@sentry/browser';
+import { getLogger } from 'loglevel';
 
-export function initLogger({ outputToConsole }: { outputToConsole: boolean }) {
-    if (outputToConsole) {
-        setLevel(levels.TRACE);
+export function createLogger(
+    name: string,
+    props: {
+        outputToConsole: boolean;
+    },
+    acceptenceErrorFilter: <E extends unknown>(err: E) => boolean = () => true,
+) {
+    const logger = getLogger(name);
+
+    if (props.outputToConsole) {
+        logger.enableAll(true);
     } else {
-        disableAll();
-    }
-}
-
-function error<E extends unknown>(err: E, extras?: Record<string, any>) {
-    loglevelError(err);
-
-    if (extras) {
-        setExtras(extras);
+        logger.disableAll();
     }
 
-    captureException(err);
-}
+    return {
+        ...logger,
+        error<E extends unknown>(err: E, extras?: Record<string, any>) {
+            logger.error(err);
 
-export const logger = {
-    warn,
-    info,
-    debug,
-    trace,
-    error,
-} as const;
+            if (acceptenceErrorFilter<E>(err)) {
+                if (extras) {
+                    setExtras(extras);
+                }
+
+                captureException(err);
+            }
+        },
+    };
+}

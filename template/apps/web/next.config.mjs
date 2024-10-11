@@ -3,7 +3,7 @@ import { withSentryConfig } from '@sentry/nextjs';
 import { config } from 'dotenv';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-import { defaultLocale, languages } from './src/modules/intl/config/langs.cjs';
+import { defaultLocale, locales } from '@workspace/localization/config/langs.cjs';
 
 import '@workspace/env/env.mjs';
 
@@ -24,7 +24,7 @@ const nextConfig = {
     },
 
     i18n: {
-        locales: Object.values(languages),
+        locales: Object.values(locales),
         defaultLocale,
     },
 

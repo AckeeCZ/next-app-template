@@ -7,8 +7,6 @@
         "start": "next start",
         "lint": "eslint-lint --config=eslint.config.mjs './src/**/*.{ts,tsx}'",
         "lint:fix": "yarn lint --fix",
-        "lokse": "lokse open",
-        "localize": "lokse update",
         "test": "vitest dev",
         "test:ci": "vitest run",
         "release": "node ./scripts/release.mjs && git push origin --tags",
@@ -33,14 +31,12 @@
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-hook-form": "7.53.0",
-        "react-intl": "6.7.2",
         "reset.css": "2.0.2",
         "string-ts": "2.2.0",
         "zod": "3.23.8"
     },
     "devDependencies": {
         "@tooling/eslint": "workspace:*",
-        "@tooling/lokse": "workspace:*",
         "@tooling/madge": "workspace:*",
         "@tooling/prettier": "workspace:*",
         "@tooling/typescript": "workspace:*",

@@ -1,14 +1,7 @@
 import type { AppType } from 'next/app';
 import Document, { Head, Html, Main, NextScript, type DocumentContext, type DocumentProps } from 'next/document';
 
-import { env } from '@workspace/env';
-import { initLogger } from '@workspace/logger';
-
 import type { ExtendedAppProps } from './_app';
-
-initLogger({
-    outputToConsole: env.NEXT_PUBLIC_BUILD_ENV === 'development',
-});
 
 interface MyDocumentProps extends DocumentProps {}
 

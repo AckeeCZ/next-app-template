@@ -1,8 +1,7 @@
 import type { FieldErrors } from 'react-hook-form';
-import { useIntl } from 'react-intl';
 import type { ZodArrayDef, ZodObjectDef, ZodRecordDef, ZodTypeAny } from 'zod';
 
-import { isMessageKey } from '~modules/intl';
+import { isMessageKey, type useIntl } from '@workspace/localization';
 
 import { isArrayDef } from './isArrayDef';
 import { isObjectDef } from './isObjectDef';

@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 import type { FieldErrors } from 'react-hook-form';
-import { useIntl } from 'react-intl';
 import type { ZodObjectDef, ZodRecordDef, ZodType } from 'zod';
+
+import { useIntl } from '@workspace/localization';
 
 import type { NestedPossibleZodEffect } from '../types';
 import { isObjectDef } from '../utils/isObjectDef';

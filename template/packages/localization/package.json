@@ -1,22 +1,21 @@
 {
     "name": "@workspace/localization",
     "version": "0.0.1",
-    "type": "module",
-    "dependencies": {
-        "next": "14.2.15",
-        "react": "18.2.0",
-        "react-intl": "6.7.2"
-    },
     "devDependencies": {
         "@tooling/eslint": "workspace:*",
-        "@tooling/madge": "workspace:*",
+        "@tooling/lokse": "workspace:*",
         "@tooling/prettier": "workspace:*",
         "@tooling/typescript": "workspace:*"
     },
     "prettier": "@tooling/prettier/config",
     "scripts": {
-        "cir-dep": "check-cir-deps .",
-        "format": "prettier-format",
-        "lint": "eslint-lint --config eslint.config.mjs './**/*.{ts,tsx}'"
+        "format": "prettier-format --write ./*.ts",
+        "lint": "eslint-lint --config eslint.config.mjs './**/*.ts'",
+        "lokse": "lokse open",
+        "localize": "lokse update"
+    },
+    "dependencies": {
+        "@workspace/common": "workspace:*",
+        "react-intl": "6.6.8"
     }
 }

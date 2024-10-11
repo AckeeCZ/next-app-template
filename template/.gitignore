@@ -58,3 +58,5 @@ yalc.lock
 .pnp.*
 
 .cache
+
+.env.local
