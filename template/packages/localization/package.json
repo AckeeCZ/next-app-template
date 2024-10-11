@@ -16,6 +16,6 @@
     },
     "dependencies": {
         "@workspace/common": "workspace:*",
-        "react-intl": "6.6.8"
+        "react-intl": "6.7.2"
     }
 }
