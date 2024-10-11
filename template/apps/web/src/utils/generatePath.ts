@@ -26,7 +26,9 @@ export function generatePath<T extends AuthRoute | Route, P extends GeneratePath
     return route.replace(regex, (_, key) => {
         const variableKey = key as VarKey;
 
-        if (params[variableKey] === undefined) throw Error(`Key ${key} was not provided`);
+        if (params[variableKey] === undefined) {
+            throw Error(`Key ${key} was not provided`);
+        }
 
         const value = params[variableKey];
 

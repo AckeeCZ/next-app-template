@@ -11,6 +11,7 @@ export function createIntl<UseTranslations extends CreateUseTranslations>(useTra
         const [lang, messages] = useTranslations();
 
         return (
+            // @ts-ignore
             <IntlProvider locale={lang} messages={messages}>
                 {children}
             </IntlProvider>

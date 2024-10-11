@@ -6,21 +6,21 @@
         "@sentry/nextjs": "7.x"
     },
     "devDependencies": {
-        "@sentry/nextjs": "^7.109.0",
+        "@sentry/nextjs": "8.34.0",
         "@tooling/eslint": "workspace:*",
+        "@tooling/madge": "workspace:*",
         "@tooling/prettier": "workspace:*",
-        "@tooling/skott": "workspace:*",
         "@tooling/typescript": "workspace:*"
     },
     "prettier": "@tooling/prettier/config",
     "scripts": {
-        "cir-dep": "find-circular-deps --cwd .",
+        "cir-dep": "check-cir-deps .",
         "format": "prettier-format",
-        "lint": "eslint-lint --config eslint.config.js './**/*.{ts,tsx}'"
+        "lint": "eslint-lint --config eslint.config.mjs './**/*.{ts,tsx}'"
     },
     "dependencies": {
-        "next": "^14.1.4",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "next": "14.2.15",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
     }
 }

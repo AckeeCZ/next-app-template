@@ -1,21 +1,21 @@
 {
     "$schema": "https://turbo.build/schema.json",
-    "pipeline": {
+    "tasks": {
         "test:ci": {
             "dependsOn": ["//#audit", "build"]
         },
         "build": {
-            "dotEnv": [".env.local", ".env"],
-            "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-            "dependsOn": ["cir-dep", "format", "lint", "^build"]
+            "inputs": ["$TURBO_DEFAULT", ".env.local", ".env"],
+            "dependsOn": ["cir-dep", "format", "lint", "^build"],
+            "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
         },
         "lint": {
             "cache": true,
-            "outputMode": "full"
+            "outputLogs": "full"
         },
         "format": {
             "cache": true,
-            "outputMode": "errors-only"
+            "outputLogs": "errors-only"
         },
         "dev": {
             "cache": false,
@@ -24,7 +24,7 @@
         },
         "cir-dep": {
             "cache": true,
-            "outputMode": "errors-only"
+            "outputLogs": "errors-only"
         },
         "//#audit": {
             "dependsOn": [],

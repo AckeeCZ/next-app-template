@@ -1,9 +1,10 @@
 {
-    "packageManager": "yarn@4.1.1",
+    "name": "nextjs-monorepo-template",
+    "packageManager": "yarn@4.5.0",
     "private": true,
-    "type": "commonjs",
+    "type": "module",
     "engines": {
-        "node": ">=20.11.1"
+        "node": ">=20"
     },
     "scripts": {
         "postinstall": "turbo telemetry disable",
@@ -26,8 +27,8 @@
         "@tooling/eslint": "workspace:*",
         "@tooling/prettier": "workspace:*",
         "@tooling/typescript": "workspace:*",
-        "husky": "^9.0.11",
-        "turbo": "^1.13.2"
+        "husky": "9.1.6",
+        "turbo": "2.1.3"
     },
     "prettier": "@tooling/prettier/config"
 }

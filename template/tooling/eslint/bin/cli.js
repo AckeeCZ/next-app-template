@@ -9,7 +9,6 @@ const ROOT = resolve(import.meta.dirname, '../../..');
  * @param {string} args
  */
 function lint(args) {
-    // FIXME: find better way to resolve root node_modules
     const eslint = resolve(ROOT, 'node_modules/.bin/eslint');
     const defaultConfig = resolve(import.meta.dirname, '../config/next.js');
 
@@ -20,9 +19,8 @@ function lint(args) {
     }
 
     try {
-        // TODO: add  --report-unused-disable-directives
         execSync(
-            `${eslint} --config=${defaultConfig} --no-warn-ignored --cache --cache-strategy=content --cache-location .cache/eslint ${args}`,
+            `${eslint} --config=${defaultConfig} --no-warn-ignored --cache --cache-strategy=content --cache-location .cache/eslint --report-unused-disable-directives ${args}`,
             {
                 encoding: 'utf8',
                 stdio: 'inherit',

@@ -1,16 +1,16 @@
 {
-    "name": "@tooling/skott",
+    "name": "@tooling/madge",
     "version": "0.0.1",
     "type": "module",
     "bin": {
-        "find-circular-deps": "./bin/cli.js"
+        "check-cir-deps": "./bin/cli.js"
     },
     "scripts": {
         "format": "prettier-format"
     },
     "devDependencies": {
         "@tooling/prettier": "workspace:*",
-        "skott": "^0.33.2"
+        "madge": "8.0.0"
     },
     "prettier": "@tooling/prettier/config"
 }

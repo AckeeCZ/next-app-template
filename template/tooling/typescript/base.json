@@ -19,7 +19,7 @@
         "incremental": true,
         "typeRoots": ["../../node_modules/@types", "../../node_modules"],
         "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-        "types": ["@total-typescript/ts-reset", "jest", "node", "vitest/globals"],
+        "types": ["@total-typescript/ts-reset", "node", "vitest/globals"],
         "baseUrl": "."
     },
     "exclude": ["node_modules", "build", "dist", ".turbo", ".next", ".vscode", ".yarn", ".husky"]

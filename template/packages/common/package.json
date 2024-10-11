@@ -5,13 +5,13 @@
     "prettier": "@tooling/prettier/config",
     "devDependencies": {
         "@tooling/eslint": "workspace:*",
+        "@tooling/madge": "workspace:*",
         "@tooling/prettier": "workspace:*",
-        "@tooling/skott": "workspace:*",
         "@tooling/typescript": "workspace:*"
     },
     "scripts": {
-        "cir-dep": "find-circular-deps --cwd .",
+        "cir-dep": "check-cir-deps .",
         "format": "prettier-format",
-        "lint": "eslint-lint --config eslint.config.js './**/*.ts'"
+        "lint": "eslint-lint --config eslint.config.mjs './**/*.ts'"
     }
 }
