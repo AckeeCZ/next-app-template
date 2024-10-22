@@ -135,6 +135,7 @@ export const nextjsConfig = tseslint.config(
                 {
                     ignoreComments: true,
                     ignoreUrls: true,
+                    ignoreStrings: true,
                     ignorePattern: '^\\s*var\\s.+=\\s*require\\s*\\(',
                 },
             ],
