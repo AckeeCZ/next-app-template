@@ -9,7 +9,7 @@
 exports.createLokseConfig = partialConfig => {
     return {
         sheetId: '__TODO__',
-        dir: 'src/translations',
+        dir: 'translations',
         column: 'key_web',
         splitTranslations: true,
         ...partialConfig,
