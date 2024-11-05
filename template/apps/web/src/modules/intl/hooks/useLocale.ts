@@ -13,7 +13,7 @@ export function useLocale() {
     const parsedLocale = (locale && locales.includes(locale) ? locale : defaultLocale) as Locale;
 
     return useMemo(() => {
-        const [lang, region] = parsedLocale.split('_');
+        const [lang, region] = parsedLocale.split('-');
 
         return {
             lang,
