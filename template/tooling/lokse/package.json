@@ -7,7 +7,7 @@
         "./config": "./config/index.js"
     },
     "dependencies": {
-        "lokse": "2.3.1"
+        "lokse": "3.0.0"
     },
     "devDependencies": {
         "@tooling/prettier": "workspace:*",
