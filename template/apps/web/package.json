@@ -9,7 +9,7 @@
         "lint:fix": "yarn lint --fix",
         "test": "vitest dev",
         "test:ci": "vitest run",
-        "release": "node ./scripts/release.mjs && git push origin --tags",
+        "release": "node ./scripts/release.mjs",
         "format": "prettier-format",
         "cir-dep": "check-cir-deps ./src"
     },

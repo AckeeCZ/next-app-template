@@ -8,5 +8,6 @@ const changelog =
 
 const releaseCommit = `git commit -m "🔖 Release v${version}"`;
 const tagCommit = `git tag -a v${version} -m "Release v${version}"`;
+const push = 'git push origin --tags';
 
-execSync([bumpVersion, changelog, releaseCommit, tagCommit].join(' && '), { stdio: 'inherit' });
+execSync([bumpVersion, changelog, releaseCommit, tagCommit, push].join(' && '), { stdio: 'inherit' });
