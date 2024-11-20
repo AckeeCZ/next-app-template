@@ -9,6 +9,7 @@ function getStagedAndScopedFiles() {
         .toString()
         .split('\n')
         .filter(file => file.trim().length > 0)
+        .map(file => file.replaceAll(' ', '\\ '))
         .map(file => resolve(ROOT, file));
 }
 
