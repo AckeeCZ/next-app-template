@@ -32,5 +32,5 @@ export const env = createEnv({
             NEXT_PUBLIC_DEV_SENTRY_DISABLED: process.env.NEXT_PUBLIC_DEV_SENTRY_DISABLED,
         }),
     },
-    skipValidation: !!process.env.CI || !!process.env.SKIP_ENV_VALIDATION || process.env.npm_lifecycle_event === 'lint',
+    skipValidation: !!process.env.SKIP_ENV_VALIDATION || process.env.npm_lifecycle_event === 'lint',
 });
