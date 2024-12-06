@@ -25,22 +25,6 @@ const nextConfig: NextConfig = {
         defaultLocale,
     },
 
-    // https://dev.to/chromygabor/add-typescript-type-check-to-next-js-2nbb
-    webpack(config, options) {
-        // Do not run type checking twice:
-        if (options.dev && options.isServer) {
-            config.plugins.push(
-                new ForkTsCheckerWebpackPlugin({
-                    typescript: {
-                        memoryLimit: 4096,
-                    },
-                }),
-            );
-        }
-
-        return config;
-    },
-
     /**
      * @type {(keyof (typeof import('./package.json'))['dependencies'])[]}
      */
