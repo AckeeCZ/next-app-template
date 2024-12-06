@@ -2,7 +2,12 @@
     "extends": "@tooling/typescript/nextjs",
     "compilerOptions": {
         "baseUrl": ".",
-        "jsx": "preserve"
+        "jsx": "preserve",
+        "paths": {
+            "~*": ["./src/*"],
+            "~public/*": ["./public/*"]
+        },
+        "module": "ESNext"
     },
     "include": [
         "**/*.ts",
