@@ -6,7 +6,5 @@ import {
 export interface ErrorBoundaryProps extends Partial<SentryErrorBoundaryProps> {}
 
 export const ErrorBoundary = ({ children, ...props }: ErrorBoundaryProps) => (
-    <SentryErrorBoundary showDialog {...props}>
-        <>{children}</>
-    </SentryErrorBoundary>
+    <SentryErrorBoundary showDialog {...props} children={children} />
 );

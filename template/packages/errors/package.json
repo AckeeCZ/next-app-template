@@ -6,7 +6,7 @@
         "@sentry/nextjs": "^7.109.0"
     },
     "devDependencies": {
-        "@sentry/nextjs": "8.34.0",
+        "@sentry/nextjs": "^8.42.0",
         "@tooling/eslint": "workspace:*",
         "@tooling/madge": "workspace:*",
         "@tooling/prettier": "workspace:*",
