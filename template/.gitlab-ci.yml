@@ -2,7 +2,11 @@ default:
     image: node:20.11.1
 
 variables:
-    VERCEL_PROJECT_NAME: 'project-name'
+    VERCEL_PROJECT_NAME: 'temp-project'
+
+.package-manager: &package-manager
+    - corepack enable
+    - corepack install
 
 try_build:
     stage: build
@@ -10,36 +14,33 @@ try_build:
         - merge_requests
     except:
         - dev
+        - stage
         - main
-    before_script:
-        - corepack enable
-        - corepack install
-        - yarn install --immutable
     script:
+        - *package-manager
+        - yarn install --immutable
         - yarn test:ci
 
-deploy_development_ackee:
+
+
+deploy_development:
     stage: deploy
     only:
         - dev
-    before_script:
-        - corepack enable
-        - corepack install
     script:
-        - yarn dlx -q vercel link --project=$VERCEL_PROJECT_NAME --scope=$ACKEE_VERCEL_SCOPE --yes --token=$ACKEE_VERCEL_API_TOKEN
-        - yarn dlx -q vercel pull --yes --environment=preview --token=$ACKEE_VERCEL_API_TOKEN
-        - yarn dlx -q vercel build --token=$ACKEE_VERCEL_API_TOKEN
-        - yarn dlx -q vercel deploy --prebuilt --token=$ACKEE_VERCEL_API_TOKEN
+        - *package-manager
+        - yarn dlx -q vercel link --project=$VERCEL_PROJECT_NAME --scope=$WEB_VERCEL_SCOPE --yes --token=$WEB_VERCEL_TOKEN
+        - yarn dlx -q vercel pull --yes --scope=$WEB_VERCEL_SCOPE --token=$WEB_VERCEL_TOKEN --environment=preview
+        - yarn dlx -q vercel build --token=$WEB_VERCEL_TOKEN
+        - yarn dlx -q vercel deploy --prebuilt --token=$WEB_VERCEL_TOKEN
 
-deploy_stage_ackee:
+deploy_stage:
     stage: deploy
     only:
         - stage
-    before_script:
-        - corepack enable
-        - corepack install
     script:
-        - yarn dlx -q vercel link --project=$VERCEL_PROJECT_NAME --scope=$ACKEE_VERCEL_SCOPE --yes --token=$ACKEE_VERCEL_API_TOKEN
-        - yarn dlx -q vercel pull --yes --environment=production --scope=$ACKEE_VERCEL_SCOPE --token=$ACKEE_VERCEL_API_TOKEN
-        - yarn dlx -q vercel build --prod --token=$ACKEE_VERCEL_API_TOKEN
-        - yarn dlx -q vercel deploy --prebuilt --prod --token=$ACKEE_VERCEL_API_TOKEN
+        - *package-manager
+        - yarn dlx -q vercel link --project=$VERCEL_PROJECT_NAME --scope=$WEB_VERCEL_SCOPE --yes --token=$WEB_VERCEL_TOKEN
+        - yarn dlx -q vercel pull --yes --scope=$WEB_VERCEL_SCOPE --token=$WEB_VERCEL_TOKEN --environment=production
+        - yarn dlx -q vercel build --prod --token=$WEB_VERCEL_TOKEN
+        - yarn dlx -q vercel deploy --prebuilt --prod --token=$WEB_VERCEL_TOKEN
