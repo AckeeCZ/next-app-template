@@ -3,9 +3,11 @@ import { withSentryConfig } from '@sentry/nextjs';
 import { config } from 'dotenv';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-import { defaultLocale, locales } from '@workspace/localization/config/langs.cjs';
+import { defaultLocale, locales } from '@workspace/localization';
 
 import '@workspace/env/env.mjs';
+
+import type { NextConfig } from 'next';
 
 if (process.env.NODE_ENV === 'development') {
     config({
@@ -13,35 +15,15 @@ if (process.env.NODE_ENV === 'development') {
     });
 }
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
     reactStrictMode: true,
-    swcMinify: true,
 
     output: 'standalone',
-    experimental: {
-        outputFileTracingRoot: path.join(import.meta.dirname, '../../'),
-    },
+    outputFileTracingRoot: path.join(__dirname, '../../'),
 
     i18n: {
         locales: Object.values(locales),
         defaultLocale,
-    },
-
-    // https://dev.to/chromygabor/add-typescript-type-check-to-next-js-2nbb
-    webpack(config, options) {
-        // Do not run type checking twice:
-        if (options.dev && options.isServer) {
-            config.plugins.push(
-                new ForkTsCheckerWebpackPlugin({
-                    typescript: {
-                        memoryLimit: 4096,
-                    },
-                }),
-            );
-        }
-
-        return config;
     },
 
     /**
