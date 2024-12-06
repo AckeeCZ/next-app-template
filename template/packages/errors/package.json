@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "type": "module",
     "peerDependencies": {
-        "@sentry/nextjs": "7.x"
+        "@sentry/nextjs": "^7.109.0"
     },
     "devDependencies": {
         "@sentry/nextjs": "8.34.0",
@@ -19,8 +19,8 @@
         "lint": "eslint-lint --config eslint.config.mjs './**/*.{ts,tsx}'"
     },
     "dependencies": {
-        "next": "14.2.15",
-        "react": "18.3.1",
-        "react-dom": "18.3.1"
+        "next": "^15.0.4",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     }
 }
