@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "scripts": {
         "types-check": "tsc --noEmit -w",
-        "dev": "next dev --turbopack & yarn types-check",
+        "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
         "lint": "eslint-lint --config=eslint.config.mjs './src/**/*.{ts,tsx}'",

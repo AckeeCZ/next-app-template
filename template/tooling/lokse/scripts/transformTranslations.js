@@ -77,7 +77,7 @@ async function transformTranslations() {
 
     if (!files.length) {
         console.warn(
-            `No translations as JSON files found in ${translationsDir}. Make sure to run 'lokse update' command first.\n`,
+            `No translations as JSON files found in ${translationsPath}. Make sure to run 'lokse update' command first.\n`,
         );
 
         return;

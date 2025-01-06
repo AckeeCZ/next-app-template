@@ -1,7 +1,5 @@
 {
     "name": "@workspace/localization",
-    "version": "0.0.1",
-    "type": "module",
     "dependencies": {
         "@workspace/common": "workspace:*",
         "next": "^15.0.4",
