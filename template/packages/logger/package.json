@@ -3,12 +3,14 @@
     "version": "0.0.1",
     "type": "module",
     "peerDependencies": {
-        "next": "14.x",
-        "react": "18.x"
+        "next": "15.x",
+        "react": "19.x"
     },
     "dependencies": {
-        "@sentry/browser": "8.34.0",
-        "loglevel": "1.9.2"
+        "@sentry/browser": "8.42.0",
+        "@sentry/nextjs": "8.42.0",
+        "loglevel": "^1.9.2",
+        "react": "^19.0.0"
     },
     "devDependencies": {
         "@tooling/eslint": "workspace:*",

@@ -26,11 +26,8 @@ export const env = createEnv({
         NEXT_PUBLIC_BUILD_ENV: process.env.NEXT_PUBLIC_BUILD_ENV,
         NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
         NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
-
-        // Dev
-        ...(process.env.NODE_ENV === 'development' && {
-            NEXT_PUBLIC_DEV_SENTRY_DISABLED: process.env.NEXT_PUBLIC_DEV_SENTRY_DISABLED,
-        }),
+        NEXT_PUBLIC_DEV_SENTRY_DISABLED:
+            process.env.NODE_ENV === 'development' ? process.env.NEXT_PUBLIC_DEV_SENTRY_DISABLED : undefined,
     },
     skipValidation: !!process.env.SKIP_ENV_VALIDATION || process.env.npm_lifecycle_event === 'lint',
 });

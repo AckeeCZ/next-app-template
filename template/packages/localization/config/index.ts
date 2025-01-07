@@ -1,1 +1,1 @@
-export * from './langs';
+export { defaultLocale, languages, locales } from './langs.cjs';
