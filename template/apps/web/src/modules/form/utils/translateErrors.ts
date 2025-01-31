@@ -1,12 +1,10 @@
 import type { FieldErrors } from 'react-hook-form';
-import type { ZodArrayDef, ZodObjectDef, ZodRecordDef, ZodTypeAny } from 'zod';
+import type { ZodArrayDef, ZodObjectDef, ZodRecordDef, ZodTypeAny, ZodTypeDef } from 'zod';
 
 import { isMessageKey, type useIntl } from '@workspace/localization';
 
-import { isArrayDef } from './isArrayDef';
-import { isObjectDef } from './isObjectDef';
-import { isRecordDef } from './isRecordDef';
-import { unwrapPossibleZodEffectsDef } from './unwrapPossibleZodEffectsDef';
+import { isArrayDef, isObjectDef, isRecordDef } from './guards';
+import { unwrapPossibleZodEffectsDef } from './unwrap';
 
 interface TranslateUtils {
     formatMessage: ReturnType<typeof useIntl>['formatMessage'];
@@ -90,4 +88,16 @@ export function translateObjectErrors(def: ZodObjectDef, errors: FieldErrors, ut
     return translateErrors(errors, utils, key => {
         return shape[key]?._def ?? null;
     });
+}
+
+export function translateErrorsOfDef(def: ZodTypeDef, errors: FieldErrors, { formatMessage }: TranslateUtils) {
+    if (isObjectDef(def)) {
+        return translateObjectErrors(def, errors, { formatMessage });
+    }
+
+    if (isRecordDef(def)) {
+        return translateRecordErrors(def, errors, { formatMessage });
+    }
+
+    throw new Error('invalid def received, ' + String(JSON.stringify(def, null, 2)));
 }
