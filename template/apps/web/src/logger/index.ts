@@ -1,4 +1,4 @@
-import { env } from '@workspace/env/env.mjs';
+import { env } from '@workspace/env/env';
 import { createLogger } from '@workspace/logger';
 
 export const logger = createLogger('app', {
