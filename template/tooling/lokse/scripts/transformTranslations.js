@@ -1,7 +1,6 @@
 const { readdir, readFile, unlink, writeFile } = require('fs/promises');
 const { resolve } = require('path');
 const { format } = require('prettier');
-const { getConfig } = require('@lokse/core');
 const prettierConfig = require('@tooling/prettier/config');
 
 /**
@@ -68,9 +67,9 @@ async function getAllJsonFiles(dir) {
 
 async function transformTranslations() {
     const root = process.cwd();
-    const lokseConfig = getConfig(root);
+    const { getConfig } = await import('@lokse/core');
+    const lokseConfig = await getConfig(root);
     const translationsPath = resolve(root, lokseConfig.dir);
-
     console.log('\nTranslations path:', translationsPath);
 
     const files = await getAllJsonFiles(translationsPath);

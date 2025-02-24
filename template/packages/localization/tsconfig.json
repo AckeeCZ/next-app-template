@@ -1,4 +1,4 @@
 {
     "extends": "@tooling/typescript/nextjs",
-    "include": ["**/*.ts", "**/*.mjs"]
+    "include": ["**/*.ts", "**/*.mjs", "lokse.config.ts"]
 }

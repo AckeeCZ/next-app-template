@@ -1,6 +1,4 @@
 {
     "extends": "@tooling/typescript/node",
-    "include": [
-        "**/*.js",
-    ],
+    "include": ["**/*.js", "scripts/transformTranslations.ts", "config/index.mts", "config/index.ts"]
 }

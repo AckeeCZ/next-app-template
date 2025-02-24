@@ -4,7 +4,7 @@ import type { Split } from 'type-fest';
 
 import type { ValuesOf } from '@workspace/common/types';
 
-import { languages, locales } from '../config';
+import { languages, locales } from '../lokse.config';
 import { translations } from '../translations';
 
 export type Language = ValuesOf<typeof languages>;
