@@ -14,7 +14,7 @@ function normalizeValue(value) {
      * - \u2028: Line separator (https://www.compart.com/en/unicode/U+2028)
      * - \u2029: Paragraph separator (https://www.compart.com/en/unicode/U+2029)
      */
-    const invalidCharsRegex = /[\u2028|\u2029]/g;
+    const invalidCharsRegex = /[\u2028\u2029]/g;
 
     if (value.match(invalidCharsRegex)) {
         value = value.replaceAll(invalidCharsRegex, '\n');
