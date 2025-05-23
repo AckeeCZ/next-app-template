@@ -28,7 +28,7 @@
         "@tooling/prettier": "workspace:*",
         "@tooling/typescript": "workspace:*",
         "husky": "^9.1.7",
-        "turbo": "^2.3.3"
+        "turbo": "^2.5.3"
     },
     "prettier": "@tooling/prettier/config"
 }
