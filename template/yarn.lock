@@ -2546,7 +2546,7 @@ __metadata:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.1"
     "@tooling/staged": "workspace:^"
     "@tooling/typescript": "workspace:*"
-    prettier: "npm:^3.5.3"
+    prettier: "npm:^3.4.2"
   bin:
     prettier-format: ./bin/cli.js
   languageName: unknown
@@ -11187,7 +11187,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.5.3":
+"prettier@npm:^3.4.2":
   version: 3.5.3
   resolution: "prettier@npm:3.5.3"
   bin:
