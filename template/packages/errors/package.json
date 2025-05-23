@@ -3,10 +3,10 @@
     "version": "0.0.1",
     "type": "module",
     "peerDependencies": {
-        "@sentry/nextjs": "^7.109.0"
+        "@sentry/nextjs": "9.x"
     },
     "devDependencies": {
-        "@sentry/nextjs": "^8.55.0",
+        "@sentry/nextjs": "^9.22.0",
         "@tooling/eslint": "workspace:*",
         "@tooling/madge": "workspace:*",
         "@tooling/prettier": "workspace:*",
