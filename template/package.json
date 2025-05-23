@@ -1,6 +1,6 @@
 {
     "name": "nextjs-monorepo-template",
-    "packageManager": "yarn@4.5.3+sha256.dddc0b96ad2dca8d56a5302b56bf3cbf8210654474a6bf88877da61e866f3d46",
+    "packageManager": "yarn@4.9.1+sha256.6ffc213b3ce0af5c92507977d9537ea3cc085caa52d1c3f08e94d613407fed19",
     "private": true,
     "type": "module",
     "engines": {
