@@ -1,6 +1,8 @@
 import { captureException, setExtras } from '@sentry/browser';
 import { getLogger } from 'loglevel';
 
+type Extras = Parameters<typeof setExtras>[0];
+
 export function createLogger(
     name: string,
     props: {
@@ -18,8 +20,8 @@ export function createLogger(
 
     return {
         ...logger,
-        error<E extends unknown>(err: E, extras?: Record<string, any>) {
-            logger.error(err);
+        error<E extends unknown>(err: E, extras?: Extras) {
+            logger.error(err, extras);
 
             if (acceptenceErrorFilter<E>(err)) {
                 if (extras) {

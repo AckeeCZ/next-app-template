@@ -2,10 +2,10 @@
     "name": "@workspace/localization",
     "dependencies": {
         "@workspace/common": "workspace:*",
-        "next": "^15.0.4",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "react-intl": "^7.0.1"
+        "next": "^15.3.2",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-intl": "^7.1.11"
     },
     "devDependencies": {
         "@tooling/eslint": "workspace:*",

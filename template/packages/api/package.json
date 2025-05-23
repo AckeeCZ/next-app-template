@@ -6,18 +6,18 @@
         "@tanstack/react-query": "5.x"
     },
     "dependencies": {
-        "@types/react": "^19.0.0",
+        "@types/react": "^19.1.5",
         "@workspace/env": "workspace:*",
         "@workspace/errors": "workspace:*",
-        "react": "^19.0.0"
+        "react": "^19.1.0"
     },
     "devDependencies": {
-        "@tanstack/react-query": "^5.62.2",
+        "@tanstack/react-query": "^5.76.2",
         "@tooling/eslint": "workspace:*",
         "@tooling/madge": "workspace:*",
         "@tooling/prettier": "workspace:*",
         "@tooling/typescript": "workspace:*",
-        "string-ts": "2.2.0"
+        "string-ts": "2.2.1"
     },
     "scripts": {
         "cir-dep": "check-cir-deps .",
