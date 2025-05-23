@@ -5,7 +5,7 @@
  * - All the rest please place to the `modules/intl`. 🙌
  */
 
-import { languages } from '../config';
+import { languages } from '../lokse.config';
 import type { Language } from '../types';
 import cs from './all.cs';
 import en from './all.en';

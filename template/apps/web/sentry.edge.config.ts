@@ -5,7 +5,7 @@
 
 import * as Sentry from '@sentry/nextjs';
 
-import { env } from '@workspace/env/env.mjs';
+import { env } from '@workspace/env';
 
 if (env.NEXT_PUBLIC_DEV_SENTRY_DISABLED !== 'true') {
     Sentry.init({
