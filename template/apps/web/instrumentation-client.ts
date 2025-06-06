@@ -6,8 +6,7 @@ import { init, replayIntegration, reportingObserverIntegration, captureRouterTra
 import { env } from '@workspace/env';
 import { logger } from '~logger';
 
-
-if (env.NEXT_PUBLIC_DEV_SENTRY_DISABLED !== 'true' && env.NEXT_PUBLIC_SENTRY_DSN) {
+if (!env.NEXT_PUBLIC_DEV_SENTRY_DISABLED && env.NEXT_PUBLIC_SENTRY_DSN) {
     logger.debug('Sentry: Initializing Sentry for client');
 
     init({
@@ -36,4 +35,4 @@ if (env.NEXT_PUBLIC_DEV_SENTRY_DISABLED !== 'true' && env.NEXT_PUBLIC_SENTRY_DSN
 }
 
 
-export const onRouterTransitionStart = env.NEXT_PUBLIC_DEV_SENTRY_DISABLED === 'true' ? () => {} : captureRouterTransitionStart;
+export const onRouterTransitionStart = env.NEXT_PUBLIC_DEV_SENTRY_DISABLED ? () => {} : captureRouterTransitionStart;

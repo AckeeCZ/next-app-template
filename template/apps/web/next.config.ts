@@ -6,15 +6,13 @@ import type { dependencies } from 'package.json';
 
 import { defaultLocale, locales } from '@workspace/localization';
 
-import '@workspace/env';
+import { env } from '@workspace/env';
 
 import type { NextConfig } from 'next';
 
-if (process.env.NODE_ENV === 'development') {
-    config({
-        path: '.env.local',
-    });
-}
+config({
+    path: '.env.local',
+});
 
 type Dependency = keyof typeof dependencies;
 
@@ -65,8 +63,7 @@ const nextConfig: NextConfig = {
                 },
                 {
                     /**
-                     * Tells the server that the clsl
-                     * ient prefers any insecure HTTP resources to be automatically upgraded to HTTPS if possible.
+                     * Tells the server any insecure HTTP resources to be automatically upgraded to HTTPS if possible.
                      */
                     key: 'Upgrade-Insecure-Requests',
                     value: '1',
@@ -104,18 +101,13 @@ const nextConfig: NextConfig = {
                     value: 'max-age=63072000; includeSubDomains; preload',
                 },
                 {
-                    // Allows fetching your app resources only from the same origin (i.e. forbids any cross origin to fetch your resources)
-                    key: 'Access-Control-Allow-Origin',
-                    value: process.env.NEXT_PUBLIC_CLIENT_ORIGIN!,
-                },
-                {
                     key: 'Content-Security-Policy',
                     value: [
                         // Default directive allows resources to be loaded only from the same origin
                         `default-src 'self'`,
 
                         // Allows fetch/xhr requests to the same origin and Google APIs
-                        `connect-src 'self' https://*.googleapis.com ${new URL(process.env.SENTRY_REPORT_URI!).origin}`,
+                        `connect-src 'self' https://*.googleapis.com ${new URL(env.NEXT_PUBLIC_SENTRY_REPORT_URI).origin}`,
 
                         // Allows images to be loaded from the same origin and Google APIs, and data URIs
                         `img-src 'self' https://www.google.com data:`,
@@ -138,7 +130,7 @@ const nextConfig: NextConfig = {
                         'upgrade-insecure-requests',
 
                         // Reports any CSP violations to Sentry (deprecated reporting API, only for backward compatibility)
-                        `report-uri ${process.env.SENTRY_REPORT_URI}`,
+                        `report-uri ${env.NEXT_PUBLIC_SENTRY_REPORT_URI}`,
 
                         // Reports any CSP violations to Sentry (modern reporting API)
                         'report-to csp-endpoint',
@@ -154,7 +146,7 @@ const nextConfig: NextConfig = {
                         max_age: 10886400,
                         endpoints: [
                             {
-                                url: `${process.env.SENTRY_REPORT_URI}`,
+                                url: `${env.NEXT_PUBLIC_SENTRY_REPORT_URI}`,
                             },
                         ],
                         include_subdomains: true,
@@ -163,14 +155,14 @@ const nextConfig: NextConfig = {
                 {
                     // Reports any CSP violations to Sentry (modern reporting API)
                     key: 'Reporting-Endpoints',
-                    value: `csp-endpoint="${process.env.SENTRY_REPORT_URI}"`,
+                    value: `csp-endpoint="${env.NEXT_PUBLIC_SENTRY_REPORT_URI}"`,
                 },
             ],
         },
     ],
 };
 
-if (process.env.NEXT_PUBLIC_DEV_SENTRY_DISABLED !== 'true') {
+if (!env.NEXT_PUBLIC_DEV_SENTRY_DISABLED) {
     console.log('Sentry is enabled');
     console.log('Sentry organization:', process.env.SENTRY_ORG);
     console.log('Sentry project:', process.env.SENTRY_PROJECT);
@@ -179,7 +171,7 @@ if (process.env.NEXT_PUBLIC_DEV_SENTRY_DISABLED !== 'true') {
 
 // Make sure adding Sentry options is the last code to run before exporting, to
 // ensure that your source maps include changes from all other Webpack plugins
-export default process.env.NEXT_PUBLIC_DEV_SENTRY_DISABLED === 'true'
+export default env.NEXT_PUBLIC_DEV_SENTRY_DISABLED === true
     ? nextConfig
     : withSentryConfig(nextConfig, {
           // For all available options, see:
