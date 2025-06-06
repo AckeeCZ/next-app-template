@@ -3,10 +3,10 @@
     "version": "0.0.1",
     "type": "module",
     "peerDependencies": {
-        "@sentry/nextjs": "^7.109.0"
+        "@sentry/nextjs": "9.x"
     },
     "devDependencies": {
-        "@sentry/nextjs": "^8.42.0",
+        "@sentry/nextjs": "^9.22.0",
         "@tooling/eslint": "workspace:*",
         "@tooling/madge": "workspace:*",
         "@tooling/prettier": "workspace:*",
@@ -19,8 +19,8 @@
         "lint": "eslint-lint --config eslint.config.mjs './**/*.{ts,tsx}'"
     },
     "dependencies": {
-        "next": "^15.0.4",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0"
+        "next": "^15.3.2",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0"
     }
 }
