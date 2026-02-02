@@ -30,6 +30,8 @@ const nextConfig: NextConfig = {
     transpilePackages: [] satisfies Dependency[],
 
     poweredByHeader: false,
+    
+    reactCompiler: true,
 
     headers: async () => [
         {
