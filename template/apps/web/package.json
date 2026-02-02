@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "scripts": {
         "types-check": "tsc --noEmit -w",
-        "dev": "next dev --turbopack",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "lint": "eslint-lint --config=eslint.config.mjs './src/**/*.{ts,tsx}'",
@@ -17,7 +17,7 @@
     "dependencies": {
         "@hookform/error-message": "^2.0.1",
         "@hookform/resolvers": "^3.10.0",
-        "@sentry/nextjs": "^9.22.0",
+        "@sentry/nextjs": "^10.38.0",
         "@tanstack/react-query": "^5.76.2",
         "@tanstack/react-query-devtools": "^5.76.2",
         "@workspace/api": "workspace:*",
@@ -26,7 +26,7 @@
         "@workspace/errors": "workspace:*",
         "@workspace/localization": "workspace:*",
         "@workspace/logger": "workspace:*",
-        "next": "^15.3.2",
+        "next": "^16.1.6",
         "normalize.css": "^8.0.1",
         "radash": "^12.1.0",
         "react": "^19.1.0",
