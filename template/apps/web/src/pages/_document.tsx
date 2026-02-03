@@ -10,7 +10,7 @@ function MyDocument({}: MyDocumentProps) {
         <Html lang='en'>
             <Head>
                 <meta name='theme-color' content='#000' />
-                <link rel='shortcut icon' href='/favicon.png' />
+                <link rel='shortcut icon' href='/favicon.ico' />
             </Head>
             <body>
                 <Main />
