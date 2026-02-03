@@ -23,10 +23,10 @@
         "@types/eslint__eslintrc": "^2.1.2",
         "@types/eslint__js": "^8.42.3",
         "eslint": "9.27.0",
-        "eslint-config-next": "15.3.2",
+        "eslint-config-next": "16.1.6",
         "eslint-config-prettier": "^10.1.5",
         "eslint-plugin-turbo": "2.5.3",
-        "next": "^15.3.2",
+        "next": "^16.1.6",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "typescript-eslint": "^8.32.1"
