@@ -4522,6 +4522,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-plugin-react-compiler@npm:1.0.0":
+  version: 1.0.0
+  resolution: "babel-plugin-react-compiler@npm:1.0.0"
+  dependencies:
+    "@babel/types": "npm:^7.26.0"
+  checksum: 10c0/9406267ada8d7dbdfe8906b40ecadb816a5f4cee2922bee23f7729293b369624ee135b5a9b0f263851c263c9787522ac5d97016c9a2b82d1668300e42b18aff8
+  languageName: node
+  linkType: hard
+
 "babel-runtime@npm:^6.26.0":
   version: 6.26.0
   resolution: "babel-runtime@npm:6.26.0"
@@ -14739,6 +14748,7 @@ __metadata:
     "@workspace/errors": "workspace:*"
     "@workspace/localization": "workspace:*"
     "@workspace/logger": "workspace:*"
+    babel-plugin-react-compiler: "npm:1.0.0"
     browserslist-config-ackee: "workspace:*"
     dotenv: "npm:16.5.0"
     gitmoji-changelog: "npm:^2.3.0"
