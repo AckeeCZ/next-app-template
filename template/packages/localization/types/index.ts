@@ -42,4 +42,4 @@ export function isFormattedMessageValues(obj: any): obj is Parameters<IntlShape[
     return obj && typeof obj === 'object';
 }
 
-export * from 'react-intl';
+export { type IntlShape, type FormattedMessage , IntlProvider } from 'react-intl';
