@@ -3,12 +3,12 @@
     "version": "0.0.1",
     "type": "module",
     "peerDependencies": {
-        "next": "15.x",
+        "next": "16.x",
         "react": "19.x"
     },
     "dependencies": {
-        "@sentry/browser": "^9.22.0",
-        "@sentry/nextjs": "^9.22.0",
+        "@sentry/browser": "^10.38.0",
+        "@sentry/nextjs": "^10.38.0",
         "loglevel": "^1.9.2",
         "react": "^19.1.0"
     },
